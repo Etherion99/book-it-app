@@ -12,10 +12,10 @@ class CreateRoomsTable extends Migration
         Schema::create('rooms', function (Blueprint $table) {
             $table->id();
             $table->integer('room_number');
-            $table->integer('cost_per_hour');
-            $table->string('description',50);
+            $table->foreignId('roomtype_id');
             $table->foreignId('branch_id');
             $table->foreign('branch_id')->references('id')->on('branches');
+            $table->foreign('roomtype_id')->references('id')->on('roomtypes');            
             $table->timestamps();
         });
     }
