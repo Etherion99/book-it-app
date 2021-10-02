@@ -19,10 +19,12 @@ class CreateUsersTable extends Migration
             $table->integer('document');
             $table->foreignId('documenttype_id');
             $table->foreignId('gender_id');
+            $table->foreignID('hotel_id')->nullable();
             $table->timestamps();
             $table->foreign('city_id')->references('id')->on('cities');
             $table->foreign('gender_id')->references('id')->on('genders');
             $table->foreign('documenttype_id')->references('id')->on('documenttypes');
+            $table->foreign('hotel_id')->references('id')->on('hotels');
         });
     }
 

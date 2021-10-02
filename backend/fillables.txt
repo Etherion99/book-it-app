@@ -1,0 +1,61 @@
+class BookingsController extends Controller
+{
+    //
+    protected $fillable = [
+        'date->enabled',
+        'hour->enabled',
+        'time->enabled',
+        'user_id->enabled',
+        'room_id->enabled',
+    ];
+}
+
+class BranchesController extends Controller
+{
+    //
+    protected $fillable = [
+        'branchtype_id->enabled',
+        'name->enabled',
+        'address->enabled',
+        'phone->enabled',
+        'description->enabled',
+    ];
+}
+
+class HotelsController extends Controller
+{
+    protected $fillable = [
+        'name->enabled',
+        'web_page->enabled',
+        'nit->enabled',        
+    ];
+}
+
+class RoomsController extends Controller
+{
+    //
+    protected $fillable = [
+        'room_number->enabled',
+        'roomtype_id->enabled',
+        'branch_id->enabled',        
+    ];
+}
+
+class UserController extends Controller
+{
+    //
+    protected $fillable = [
+        'name->enabled',
+        'lastname->enabled',
+        'email->enabled',        
+        'username->enabled',  
+        'password->enabled',  
+        'city_id->enabled',
+        'document->enabled',    
+        'gender->enabled',  
+        'hotel_id->enabled',          
+    ];
+}
+
+
+

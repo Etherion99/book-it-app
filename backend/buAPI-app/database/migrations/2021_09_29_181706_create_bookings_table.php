@@ -13,7 +13,7 @@ class CreateBookingsTable extends Migration
             $table->id();
             $table->date('date');
             $table->time('hour');
-            $table->integer('hours');
+            $table->integer('time');
             $table->integer('total_cost');
             $table->timestamps();
             $table->foreignId('user_id');
