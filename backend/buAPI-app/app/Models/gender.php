@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class gender extends Model
 {
     use HasFactory;
+
+    //relación 1-n con users
 }

@@ -14,7 +14,7 @@ class CreateCitiesTable extends Migration
             $table->string('cit_code',30);
             $table->foreignId('department_id');
             $table->timestamps();
-            
+            $table->foreign('department_id')->references('id')->on('departments');
         });
     }
     public function down()
