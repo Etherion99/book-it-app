@@ -12,6 +12,6 @@ class roomtypes extends Model
     //relación 1-n con rooms
     public function rooms()
     {
-        return $this->hasMany(Room::class);
+        return $this->hasMany(rooms::class);
     }
 }

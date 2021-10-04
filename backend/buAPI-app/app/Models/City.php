@@ -22,4 +22,9 @@ class City extends Model
          return $this->hasMany(users::class);
      }
 
+     public function branches()
+     {
+         return $this->hasMany(branches::class);
+     }
+
 }
