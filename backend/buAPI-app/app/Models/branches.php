@@ -18,15 +18,15 @@ class branches extends Model
     // Relación n-1 con : branchtype-city-hotel
     public function branchtype()
     {
-        return this->belongsTo(branchtypes::class);
+        return $this->belongsTo(branchtypes::class);
     }
     public function city()
     {
-        return this->belongsTo(cities::class);
+        return $this->belongsTo(cities::class);
     }
     public function hotel()
     {
-        return this->belongsTo(hotels::class);
+        return $this->belongsTo(hotels::class);
     }
     // Relación 1-n con room
     public function rooms()

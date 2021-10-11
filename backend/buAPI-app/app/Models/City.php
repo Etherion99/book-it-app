@@ -12,7 +12,7 @@ class City extends Model
     //Relación n-1 con departament
     public function department()
     {
-        return this->belongsTo(departments::class);
+        return $this->belongsTo(departments::class);
     }
 
 
