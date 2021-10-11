@@ -28,15 +28,15 @@ class User extends Model
     //Relación n-1 con city-documenttype-gender
     public function city()
     {
-        return this->belongsTo(City::class);
+        return $this->belongsTo(City::class);
     }
     public function documenttype()
     {
-        return this->belongsTo(documenttypes::class);
+        return $this->belongsTo(documenttypes::class);
     }
     public function gender()
     {
-        return this->belongsTo(gender::class);
+        return $this->belongsTo(gender::class);
     }
 
 
