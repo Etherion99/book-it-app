@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class branchtypes extends Model
 {
-    use HasFactory;
+    
 
     // Relación 1-n con branches
     public function branches()

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class City extends Model
 {    
-    use HasFactory;
+    
 
     //Relación n-1 con departament
     public function department()
