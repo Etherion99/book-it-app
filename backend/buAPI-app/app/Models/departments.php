@@ -12,7 +12,7 @@ class departments extends Model
     //relación n-1 con country
     public function country()
     {
-        return this->belongsTo(countries::class);
+        return $this->belongsTo(countries::class);
     }
 
     //relación 1-n con city

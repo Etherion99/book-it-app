@@ -20,11 +20,11 @@ class bookings extends Model
     //Relación n-1 con room y con user
     public function user()
     {
-        return this->belongsTo(users::class);
+        return $this->belongsTo(users::class);
     }
 
     public function room()
     {
-        return this->belongsTo(rooms::class);
+        return $this->belongsTo(rooms::class);
     }
 }
