@@ -8,15 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 class User extends Model
 {
     protected $fillable = [
-        'name->enabled',
-        'lastname->enabled',
-        'email->enabled',        
-        'username->enabled',  
-        'password->enabled',  
-        'city_id->enabled',
-        'document->enabled',    
-        'gender->enabled',  
-        'hotel_id->enabled',          
+        'name',
+        'lastname',
+        'email',        
+        'username',  
+        'password',  
+        'city_id',
+        'document',    
+        'gender',  
+        'hotel_id',          
     ];
 
     //Relación 1-n con bookings
