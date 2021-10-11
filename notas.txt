@@ -1,0 +1,1 @@
+1. autenticacion: user, id_hotel nullable
