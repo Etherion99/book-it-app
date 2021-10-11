@@ -7,7 +7,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class branches extends Model
 {
-    use HasFactory;
+    protected $fillable = [
+        'branchtype_id->enabled',
+        'name->enabled',
+        'address->enabled',
+        'phone->enabled',
+        'description->enabled',
+    ];
  
     // Relación n-1 con : branchtype-city-hotel
     public function branchtype()

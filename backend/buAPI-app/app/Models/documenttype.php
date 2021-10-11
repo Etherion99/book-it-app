@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class documenttype extends Model
 {
-    use HasFactory;
+    
 
     //Relación 1-n con users
     public function users()

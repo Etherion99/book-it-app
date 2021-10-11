@@ -7,7 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class hotels extends Model
 {
-    use HasFactory;
+    protected $fillable = [
+        'name->enabled',
+        'web_page->enabled',
+        'nit->enabled',        
+    ];
 
     //relación 1-n con branches
     public function branches()

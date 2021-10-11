@@ -7,7 +7,15 @@ use Illuminate\Database\Eloquent\Model;
 
 class bookings extends Model
 {
-    use HasFactory;
+    
+
+    protected $fillable = [
+        'date->enabled',
+        'hour->enabled',
+        'time->enabled',
+        'user_id->enabled',
+        'room_id->enabled',
+    ];
     
     //Relación n-1 con room y con user
     public function user()

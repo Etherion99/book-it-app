@@ -7,7 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class rooms extends Model
 {
-    use HasFactory;
+    protected $fillable = [
+        'room_number->enabled',
+        'roomtype_id->enabled',
+        'branch_id->enabled',        
+    ];
 
     //Relación 1-n con bookings
     public function bookings()
@@ -18,10 +22,10 @@ class rooms extends Model
     //relación n-1 con branches-roomtype
     public function branch()
     {
-        return this->belongsTo(branches::class);
+        return $this->belongsTo(branches::class);
     }
     public function roomtype()
     {
-        return this->belongsTo(roomtypes::class);
+        return $this->belongsTo(roomtypes::class);
     }
 }

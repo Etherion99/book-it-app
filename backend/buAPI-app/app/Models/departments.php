@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class departments extends Model
 {
-    use HasFactory;
+    
 
     //relación n-1 con country
     public function country()
