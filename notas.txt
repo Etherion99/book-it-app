@@ -1,1 +1,10 @@
 1. autenticacion: user, id_hotel nullable
+
+
+2. rutas
+    buscar habitaciones por nombre de hotel
+        input: texto de busqueda
+        output: array de habitaciones
+
+    actualizar datos de usuario
+    registrar una reservacion
