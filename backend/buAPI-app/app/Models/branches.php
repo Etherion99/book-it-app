@@ -8,11 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class branches extends Model
 {
     protected $fillable = [
-        'branchtype_id->enabled',
-        'name->enabled',
-        'address->enabled',
-        'phone->enabled',
-        'description->enabled',
+        'branchtype_id',
+        'name',
+        'address',
+        'phone',
+        'description',
     ];
  
     // Relación n-1 con : branchtype-city-hotel
