@@ -12,7 +12,7 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->string('name',30);
             $table->string('lastname',30);
-            $table->date('email');
+            $table->String('email');
             $table->integer('username');
             $table->string('password',72);
             $table->foreignId('city_id');
