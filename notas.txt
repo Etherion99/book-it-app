@@ -6,5 +6,37 @@
         input: texto de busqueda
         output: array de habitaciones
 
+    regitrar hotel        
+
+    regitrar sucursal
+
+    registrar habitación
+
+    **El admin del hotel registra las sucursales y a cada sucurla le registra sus habitaciones
+
     actualizar datos de usuario
+        Solo actualizar nombre, ciudad, contraseña
+
     registrar una reservacion
+        requiere buscar habitación
+        Input: id_habitacion, horainicio, hora final
+    
+    registrarse como administrador de un hotel 
+        Para usuario:
+            'name',
+            'lastname',
+            'email',        
+            'username',  
+            'password',  
+            'city_id',
+            'document',    
+            'gender',  
+        Para Admin:
+            Lo mismo que para usuario +
+            'name del hotel',            
+            'nit',
+
+            
+        
+
+    
