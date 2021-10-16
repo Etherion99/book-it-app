@@ -17,6 +17,6 @@ Route::group([
 
 Route::post('branch/create',[AuthController::class, 'newBranch']);
 
-
+Route::post('room/create',[AuthController::class, 'newRoom']);
 
 

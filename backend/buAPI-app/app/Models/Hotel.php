@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Hotel extends Model
 {
     protected $fillable = [
-        'name->enabled',
-        'web_page->enabled',
-        'nit->enabled',        
+        'name',
+        'web_page',
+        'nit',        
     ];
 
     //relación 1-n con branches

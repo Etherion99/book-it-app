@@ -10,11 +10,11 @@ class Booking extends Model
     
 
     protected $fillable = [
-        'date->enabled',
-        'hour->enabled',
-        'time->enabled',
-        'user_id->enabled',
-        'room_id->enabled',
+        'date',
+        'hour',
+        'time',
+        'user_id',
+        'room_id',
     ];
     
     //Relación n-1 con room y con user

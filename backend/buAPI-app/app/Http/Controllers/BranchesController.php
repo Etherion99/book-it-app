@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\branches;
+use App\Models\Branch;
 
 class BranchesController extends Controller
 {
@@ -11,7 +11,7 @@ class BranchesController extends Controller
     public function newBranch(Request $resquest){
         $data = $request->all();  
 
-        branches::create($data);
+        Branch::create($data);
 
         return [
             'ok' => true,

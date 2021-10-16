@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Room extends Model
 {
     protected $fillable = [
-        'room_number->enabled',
-        'roomtype_id->enabled',
-        'branch_id->enabled',        
+        'room_number',
+        'roomtype_id',
+        'branch_id',        
     ];
 
     //Relación 1-n con bookings
