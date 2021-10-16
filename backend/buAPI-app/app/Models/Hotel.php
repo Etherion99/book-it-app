@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class hotels extends Model
+class Hotel extends Model
 {
     protected $fillable = [
         'name->enabled',
@@ -16,13 +16,13 @@ class hotels extends Model
     //relación 1-n con branches
     public function branches()
     {
-        return $this->hasMany(branches::class);
+        return $this->hasMany(Branch::class);
     }
 
     //relación 1-1 con users
     public function user()
     {
-        return $this->hasOne(users::class);
+        return $this->hasOne(User::class);
     }
 
 }

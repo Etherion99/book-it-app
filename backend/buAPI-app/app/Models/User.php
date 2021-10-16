@@ -35,17 +35,16 @@ class User extends Authenticatable
     }
     public function documenttype()
     {
-        return $this->belongsTo(documenttypes::class);
+        return $this->belongsTo(DocumentType::class);
     }
     public function gender()
     {
-        return $this->belongsTo(gender::class);
+        return $this->belongsTo(Gender::class);
     }
-
 
     //relación 1-1 con hotel
     public function hotel()
     {
-        return $this->hasOne(hotels::class);
+        return $this->hasOne(Hotel::class);
     }
 }

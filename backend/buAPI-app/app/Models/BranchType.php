@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class branchtypes extends Model
+class BranchType extends Model
 {
     
 
     // Relación 1-n con branches
     public function branches()
     {
-        return $this->hasMany(branches::class);
+        return $this->hasMany(Branch::class);
     }
 }

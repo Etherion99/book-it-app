@@ -5,11 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class roomtypes extends Model
+class RoomType extends Model
 {       
     //relación 1-n con rooms
     public function rooms()
     {
-        return $this->hasMany(rooms::class);
+        return $this->hasMany(Room::class);
     }
 }

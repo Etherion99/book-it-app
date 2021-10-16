@@ -12,19 +12,19 @@ class City extends Model
     //Relación n-1 con departament
     public function department()
     {
-        return $this->belongsTo(departments::class);
+        return $this->belongsTo(Department::class);
     }
 
 
     //Relación 1-n con branches - users
      public function users()
      {
-         return $this->hasMany(users::class);
+         return $this->hasMany(User::class);
      }
 
      public function branches()
      {
-         return $this->hasMany(branches::class);
+         return $this->hasMany(Branch::class);
      }
 
 }

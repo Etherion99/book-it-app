@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Bookings extends Model
+class Booking extends Model
 {
     
 
@@ -20,11 +20,11 @@ class Bookings extends Model
     //Relación n-1 con room y con user
     public function user()
     {
-        return $this->belongsTo(users::class);
+        return $this->belongsTo(User::class);
     }
 
     public function room()
     {
-        return $this->belongsTo(rooms::class);
+        return $this->belongsTo(Room::class);
     }
 }

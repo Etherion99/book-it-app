@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class rooms extends Model
+class Room extends Model
 {
     protected $fillable = [
         'room_number->enabled',
@@ -16,16 +16,16 @@ class rooms extends Model
     //Relación 1-n con bookings
     public function bookings()
     {
-        return $this->hasMany(bookings::class);
+        return $this->hasMany(Booking::class);
     }
 
     //relación n-1 con branches-roomtype
     public function branch()
     {
-        return $this->belongsTo(branches::class);
+        return $this->belongsTo(Branch::class);
     }
     public function roomtype()
     {
-        return $this->belongsTo(roomtypes::class);
+        return $this->belongsTo(RoomType::class);
     }
 }
