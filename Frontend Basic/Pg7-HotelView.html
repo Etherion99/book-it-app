@@ -14,7 +14,16 @@
     <link href="css/bootstrap-datetimepicker.min.css" rel="stylesheet">
     <script src="js/bootstrap-datetimepicker.min.js"></script>
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
-    <link href="jquery.bsPhotoGallery.css" rel="stylesheet">    
+    <link href="jquery.bsPhotoGallery.css" rel="stylesheet"> 
+
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/formulario.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+    <script src="scripts-sebastian.js" defer></script>
+    <script src="scripts-william.js" defer></script>
+    <script src="scripts-nicolas.js" defer></script>    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>   
 
 
 
@@ -79,50 +88,31 @@
         <br><br>
 
       <form class="/ActualizarH/" method="POST">
-          <div class="form-group row">
-            <div class="col-sm-2 col-form-label"></div>
-            <label for="staticRoom" class="col-sm-2 col-form-label">ID </label>
-            <div class="col-sm-8">
-              <input name="HID" type="text" readonly class="form-control-plaintext" id="staticRoom" value="{{hoteldata[0]}}" style="text-align: center;">
+           <div class="card p-5 col-6">                            
+                <div class="row mb-4">
+                    <div class="col">
+                        <label for="username" class="form-label fw-bold">Nombre</label>
+                        <div class="input-group d-flex">
+                            <input type="text" class="form-control order-2" name="username" id="username" minlength="10" maxlength="20">
+                            <span class="input-group-text order-1"><i class="fas fa-user"></i></span>
+                            <span class="focus-border"><i></i></span>
+                            <div class="invalid-feedback order-3"></div>
+                        </div>
+                    </div>                    
+                </div>                                    
+                <div class="row mb-4">
+                    <div class="col">
+                        <label for="email" class="form-label fw-bold">Correo electrónico</label>
+                        <div class="input-group d-flex">
+                            <input type="email" class="form-control order-2" name="email" id="email">
+                            <span class="input-group-text order-1"><i class="fas fa-envelope"></i></span>
+                            <span class="focus-border"><i></i></span>
+                            <div class="invalid-feedback order-3"></div>
+                        </div>
+                    </div>                    
+                </div>                                    
+                
             </div>
-          </div>
-
-          <div class="form-group row">
-            <div class="col-sm-2 col-form-label"></div>
-            <label for="staticNombre" class="col-sm-2 col-form-label">Nombre</label>
-            <div class="col-sm-8">
-              <input type="text" style="text-align: center;" readonly class="form-control-plaintext" id="Nombre" value="{{hoteldata[1]}}" >
-            </div>
-          </div>
-
-          <div class="form-group row">
-            <div class="col-sm-2 col-form-label"></div>
-            <label for="staticCorreo<" class="col-sm-2 col-form-label">Correo</label>
-            <div class="col-sm-8">
-              <input name="NewEmailH" type="text" style="text-align: center;" class="form-control" id="staticCorreo<" value="{{hoteldata[2]}}">
-            </div>
-          </div>
-
-          <div class="form-group row">
-            <div class="col-sm-2 col-form-label"></div>
-            <label for="staticPaginaWeb<" class="col-sm-2 col-form-label">Pagina Web</label>
-            <div class="col-sm-8">
-              <input name="PgwebH" type="text" style="text-align: center;" class="form-control" id="staticPaginaWeb<" value="{{hoteldata[3]}}">
-            </div>
-          </div>
-
-          <div class="form-group row">
-            <div class="col-sm-2 col-form-label"></div>
-            <label for="staticDescripción" class="col-sm-2 col-form-label">Descripción</label>
-            <div class="col-sm-8">
-              <input name="DescH" type="text" style="text-align: center;" class="form-control" id="staticDescripción" value="{{hoteldata[5]}}">
-            </div>
-          </div>
-
-          <br><br>
-          <p>
-            <input type="submit" value="Guardar Cambios"  class="btn btn-primary mb-6"> 
-          </p> 
       </form>
 
       <br> <br>
@@ -136,10 +126,102 @@
     
 
     <div class="col-sm-7 holder-welcome_logo">
-      
+    
+    <div class="row">
       <p>
-        <a href="/irCreacionSucursal/{{hoteldata[0]}}"><input type="submit" value="Crear Sucursal"  class="btn btn-primary mb-10"></a>
+        <a><input type="submit" value="Crear Sucursal"  class="btn btn-primary mb-10"></a>
       </p>
+      <p>
+        <a><input type="submit" value="Crear Habitaciones"  class="btn btn-primary mb-10"></a>
+      </p>
+    </div>
+      <div>
+        <form class="col-12 row d-flex justify-content-center" id="form">
+            <div class="p-5">
+                <div class="row mb-5">
+                    <h1 class="fs-2 text-center fw-bold">Crear Sucursal</h1>
+                </div>
+                <div class="row mb-4">
+                    <div class="col">
+                        <label for="name" class="form-label fw-bold">Dirección</label>
+                        <div class="input-group d-flex">
+                            <input type="text" class="form-control order-2" name="name" id="name">
+                            <span class="input-group-text order-1"><i class="fas fa-id-card"></i></span>
+                            <span class="focus-border"><i></i></span>
+                            <div class="invalid-feedback order-3"></div>
+                        </div>    
+                    </div>
+                    <div class="col">
+                        <label for="lastname" class="form-label fw-bold">Telefono</label>
+                        <div class="input-group d-flex">
+                            <input type="text" class="form-control order-2" name="lastname" id="lastname">
+                            <span class="input-group-text order-1"><i class="fas fa-id-card"></i></span>
+                            <span class="focus-border"><i></i></span>
+                            <div class="invalid-feedback order-3"></div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <label for="lastname" class="form-label fw-bold">Ciudad</label>
+                        <div class="input-group d-flex">
+                            <input type="text" class="form-control order-2" name="lastname" id="lastname">
+                            <span class="input-group-text order-1"><i class="fas fa-id-card"></i></span>
+                            <span class="focus-border"><i></i></span>
+                            <div class="invalid-feedback order-3"></div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </form>
+      </div>
+
+      <div>
+        <form class="col-12 row d-flex justify-content-center" id="form">
+            <div class="p-5">
+                <div class="row mb-5">
+                    <h1 class="fs-2 text-center fw-bold">Crear Habitación</h1>
+                </div>
+                <div class="row mb-4">
+                    <div class="col">
+                        <label for="name" class="form-label fw-bold">Dirección</label>
+                        <div class="input-group d-flex">
+                            <input type="text" class="form-control order-2" name="name" id="name">
+                            <span class="input-group-text order-1"><i class="fas fa-id-card"></i></span>
+                            <span class="focus-border"><i></i></span>
+                            <div class="invalid-feedback order-3"></div>
+                        </div>    
+                    </div>
+                    <div class="col">
+                        <label for="lastname" class="form-label fw-bold">Telefono</label>
+                        <div class="input-group d-flex">
+                            <input type="text" class="form-control order-2" name="lastname" id="lastname">
+                            <span class="input-group-text order-1"><i class="fas fa-id-card"></i></span>
+                            <span class="focus-border"><i></i></span>
+                            <div class="invalid-feedback order-3"></div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <label for="lastname" class="form-label fw-bold">Ciudad</label>
+                        <div class="input-group d-flex">
+                            <input type="text" class="form-control order-2" name="lastname" id="lastname">
+                            <span class="input-group-text order-1"><i class="fas fa-id-card"></i></span>
+                            <span class="focus-border"><i></i></span>
+                            <div class="invalid-feedback order-3"></div>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <label for="lastname" class="form-label fw-bold">Sucursal</label>
+                        <div class="input-group d-flex">
+                            <input type="text" class="form-control order-2" name="lastname" id="lastname">
+                            <span class="input-group-text order-1"><i class="fas fa-id-card"></i></span>
+                            <span class="focus-border"><i></i></span>
+                            <div class="invalid-feedback order-3"></div>
+                        </div>
+                    </div>
+                </div>
+              </div>
+            </form>
+      </div>
+      
 
       <div class="row">
     
@@ -155,18 +237,25 @@
                 <th scope="col" style="border: 2px solid">Eliminar Sucursal</th>             
               </tr>                
             </thead>
-            <tbody>
-                {% for cli in scsales %}
-                  <tr>                   
-                    <td>{{ cli.0 }}</td>
-                    <td>{{ cli.1 }}</td>
-                    <td>{{ cli.4 }}</td>
-                    <td>{{ cli.2 }}</td>
-                    <td>{{ cli.5 }}</td>
-                    <td><a href="/irVistaSucursal/{{cli.0}}">Ver</a></td>
-                    <td><a href="/EliminarSucursal/{{cli.0}}">Eliminar</a></td>                    
-                  </tr>        
-                {% endfor %}
+            <tbody>                
+
+            </tbody>
+          </table>       
+      </div>
+
+      <div class="row">
+    
+          <table class="table table-responsible-lg" style="text-align: center;">
+            <thead>        
+              <tr>          
+                <th scope="col-sm-1" style="border: 2px solid">#</th>
+                <th scope="col-sm-2" style="border: 2px solid">Habitación</th>
+                <th scope="col-sm-1" style="border: 2px solid">Sucursal</th>
+                <th scope="col" style="border: 2px solid">Número</th>                 
+                <th scope="col" style="border: 2px solid">Eliminar Sucursal</th>             
+              </tr>                
+            </thead>
+            <tbody>                
 
             </tbody>
           </table>       
