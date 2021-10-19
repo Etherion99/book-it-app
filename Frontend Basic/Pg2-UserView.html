@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <title>Usuario</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/sign-in/">
+    <link href="../assets/dist/css/bootstrap.css" rel="stylesheet">
+    <link href="signin.css" rel="stylesheet">
+
+
+    <style>
+
+    html {
+        width: 100%;
+        height: 100%;
+    }
+
+    .holder-welcome_logo {      
+        width: 100%
+        height: 100%;
+
+    }     
+
+    .holder_body {
+      margin: 0;
+      height: 100%;
+      widows: 100%;
+      text-align: center;     
+    }
+
+    h2 {
+       font-weight: bold;
+       white-space: nowrap; 
+    }
+
+
+    </style>
+</head>
+<body>
+
+
+<div class="container-fluid" style="background-color: #F5F5F5">
+
+  <nav class="navbar navbar-dark bg-primary fluid">
+
+    <div class="col-md-9">   
+
+
+    </div>     
+          
+    <form action="/cerrarSesion" method="POST"> 
+       <input type="submit" value="Salir"  class="btn btn-primary mb-10"> 
+    </form>    
+  </nav>
+
+  <div class="row">
+    
+    <div class="col-sm-4">
+      
+      <h3>Mis datos:</h3>
+      <form action="/ActualizarUsuario" method="POST">
+          <div class="form-group row">
+            <div class="col-sm-2 col-form-label"></div>
+            <label for="staticRoom" class="col-sm-2 col-form-label">ID </label>
+            <div class="col-sm-8">
+              <input name="usuarioID" type="text" readonly class="form-control-plaintext" id="staticRoom" value="{{userdata[0]}}" style="text-align: center;">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <div class="col-sm-2 col-form-label"></div>
+            <label for="staticNombre" class="col-sm-2 col-form-label">Nombre</label>
+            <div class="col-sm-8">
+              <input type="text" style="text-align: center;" readonly class="form-control-plaintext" id="Nombre" value="{{userdata[1]}}" >
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <div class="col-sm-2 col-form-label"></div>
+            <label for="staticNombre" class="col-sm-2 col-form-label">Apellidos</label>
+            <div class="col-sm-8">
+              <input type="text" style="text-align: center;" readonly class="form-control-plaintext" id="Nombre" value="{{userdata[2]}}" >
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <div class="col-sm-2 col-form-label"></div>
+            <label for="staticCorreo<" class="col-sm-2 col-form-label">Correo</label>
+            <div class="col-sm-8">
+              <input name="NewEmail" type="text" style="text-align: center;" class="form-control" id="staticCorreo<" value="{{userdata[5]}}">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <div class="col-sm-2 col-form-label"></div>
+            <label for="staticCorreo<" class="col-sm-2 col-form-label">Telefono</label>
+            <div class="col-sm-8">
+              <input name="NewTelefono" type="text" style="text-align: center;" class="form-control" id="staticCorreo<" value="{{userdata[3]}}">
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-2 col-form-label"></div>
+            <label for="staticCorreo<" class="col-sm-2 col-form-label">Edad</label>
+            <div class="col-sm-8">
+              <input name="newEdad"type="text"style="text-align: center;" class="form-control" id="staticCorreo<" value="{{userdata[4]}}">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <div class="col-sm-2 col-form-label"></div>
+            <label for="staticDireccion<" class="col-sm-2 col-form-label">Documento</label>
+            <div class="col-sm-8">
+              <input type="text" readonly style="text-align: center;" class="form-control-plaintext" id="staticDireccion<" value="{{userdata[10]}}">
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <div class="col-sm-2 col-form-label"></div>
+            <label for="staticCiudad" class="col-sm-2 col-form-label">Ciudad</label>
+            <div class="col-sm-8">
+              <input type="text" readonly  style="text-align: center;" class="form-control-plaintext" id="staticPaginaWeb<" value="{{userdata[9]}}">
+            </div>
+          </div>     
+
+          <p>        
+            <input type="submit" value="Actualizar Datos"  class="btn btn-primary mb-10"> 
+          </a>
+      </p>         
+
+      </form>
+      
+
+
+    </div>
+
+    <div class="col-sm-8">
+
+      <h3>Mis Reservas:</h3>
+      
+       <table class="table table-responsible-lg" style="text-align: center;">
+            <thead>        
+              <tr>          
+                <th scope="col" style="border: 2px solid">ID</th>
+                <th scope="col" style="border: 2px solid">Dia</th>
+                <th scope="col" style="border: 2px solid">Hora</th>
+                <th scope="col" style="border: 2px solid">Hotel</th>    
+                <th scope="col" style="border: 2px solid">Sucursal</th>             
+                <th scope="col" style="border: 2px solid">Habitación</th>
+                <th scope="col" style="border: 2px solid">Tiempo(Horas)</th>                
+                <th scope="col" style="border: 2px solid">Costo</th>                            
+              </tr>  
+              
+            </thead>
+            <tbody>
+                {% for cli in reservaData %}
+                  <tr>                   
+                    <td>{{ cli.0 }}</td>
+                    <td>{{ cli.1 }}</td>
+                    <td>{{ cli.2 }}</td>
+                    <td>{{ cli.10 }}</td>   
+                    <td>{{ cli.12 }}</td>  
+                    <td>{{ cli.11 }}</td>  
+                    <td>{{ cli.3 }}</td>   
+                    <td>{{ cli.13 }}</td> 
+                  </tr>        
+                {% endfor %}
+        </tbody>
+        </table>     
+
+    </div>
+
+  </div>
+
+
+  <form action="/BuscarHab/Bucaramanga/{{userdata[0]}}" method="POST">
+    <div class="row" style="text-align: left;">
+
+      <div class="col-sm-3">
+        <br> 
+        <div class="col-sm-10">
+             <select name="CitNameS" value="{{citName}}" id="inputTdoc" class="form-control">
+                  <option name="CitName" value="Bucaramanga">Bucaramanga</option>                
+              </select>
+        </div>
+      </div>
+
+      <div class="col-sm-3">
+        <br> 
+        <p>
+          <input type="submit" value="Buscar"  class="btn btn-primary mb-10"> 
+        </p>
+      </div>
+    </div>
+  </form>
+  
+
+
+
+
+
+
+
+
+
+  
+</body>
+</html>
