@@ -66,13 +66,13 @@
               
           </div>
       </section>
-      <div id="diper" class="mb-6 row container-fluid d-flex align-items-center justify-content-center rounded-1" style="background-color: whitesmoke;">
+      <div id="diper" class="mb-5 row m-1 container-fluid d-flex align-items-center justify-content-center rounded-1" style="background-color: whitesmoke;">
         <div class="col col-sm-4 card">        
-          <div class="card mb-2">
+          <div class="m-2">
             <h3 class="fs-3 text-center fw-bold">Mis datos:</h3>
           </div>            
           <div class="text-center" >
-            <form class="col-12 row d-flex justify-content-center" action="/ActualizarUsuario" method="POST">
+            <form class="col-12 row mx-0 d-flex justify-content-center" action="/ActualizarUsuario" method="POST">
               <div class="form-group row input-group d-flex"> 
                 <div class="row mx-0">
                   <label for="nombreHotel" class=" col form-label fw-bold" style="width: 30%;">Nombre</label>
@@ -100,41 +100,45 @@
                 </div>
               </div>
 
-              <div class="form-group row input-group d-flex">                    
+              <div class="form-group row mx-0 nput-group d-flex">                    
                 <div  class="row mx-0">
                   <label for="Contraseña" class="col form-label fw-bold" style="width: 30%;">Contraseña</label>
                   <input class="col form-control order-2" style="width: 60%;" id="Contraseña">
                 </div>
               </div>                          
 
-              <div  class="row d-flex justify-content-center">
-                  <input id="try" type="submit"  value="Actualizar Datos"  class="btn btn-primary mb-5" style="width: 50%;">                            
-              </div> 
-              <div  class="row d-flex justify-content-center " >
-                <input id="try" href="#registrar"type="submit"  value="Registrar Hotel"  class="btn btn-primary mb-5" style="width: 50%;">                            
-              </div>         
-            </form>
+              <div  class="row mx-0 d-flex justify-content-center">
+                  <input id="try" type="submit"  value="Actualizar Datos"  class="btn btn-primary mb-3 mx-0" style="width: 40%;">                            
+              </div>                       
+            </form>     
           </div>     
+          <div  class="container row mx-0 d-flex justify-content-center" >
+            <input id="try" href="#registrar"type="submit"  value="Registrar Hotel"  class="btn btn-primary mx-0" style="width: 60%;">                            
+          </div>
         </div>   
 
         
         
         <div  class= "col-sm-8 justify-content-center ">
-          <div class="row" style="border: 2px solid green;"> 
-            <div class="row">
-              <div class="col-sm-3">                           
-                <div id="ty" class="col-sm-10">
-                      <select name="CitNameS" id="inputTdoc" class="form-control">
-                        <label for="">Buscar en: </label>
-                          <option name="CitName" value="Bucaramanga">Bucaramanga</option>                
-                      </select>
-                </div>
+          <div class="row mx-0 card card row container-fluid d-flex align-items-center justify-content-center"> 
+            <div class="row mx-0 card mb-1">
+              <div class="row mx-0" >
+                <label class="fs-3 fw-bold" for="">Buscar en: </label>
               </div>
-              <div class="col">                              
-                <input  id="type" type="submit" value="Buscar"  class="btn btn-primary mb-10"> 
-              </div>  
+              <div class="row mx-0">
+                <div class="col mb-1" >                           
+                  <div style="width: 100%;">
+                    <select  name="CitNameS" id="inputTdoc" class="form-control">
+                        <option name="CitName" value="Bucaramanga">Bucaramanga</option>                
+                    </select>
+                  </div>
+                </div>
+                <div class="col">                              
+                  <input type="submit" value="Buscar"  class="btn btn-primary mb-10"> 
+                </div> 
+              </div>               
             </div>
-            <div class="row">
+            <div class="row mx-0">
               <table class="table table-striped table-dark">
                 <thead>
                   <tr>
@@ -224,7 +228,7 @@
           </div>          
                     
         
-          <div  class = "card row container-fluid d-flex align-items-center justify-content-center "  >
+          <div  class = "card row mx-0 container-fluid d-flex align-items-center justify-content-center "  >
               <div>
                   <h3 class="fs-3 text-center fw-bold">Mis Reservas:</h3>
               </div>
@@ -331,7 +335,7 @@
           </div>
         </div>
 
-        <div id="registrar" class="row mx-0 container-fluid d-flex align-items-center justify-content-center rounded-1" style="background-color: whitesmoke;">            
+        <div id="registrar" class="row mx-0 m-2 card container-fluid d-flex align-items-center justify-content-center rounded-1" style="background-color: whitesmoke;">            
           <form class="col-12 row d-flex justify-content-center" id="registrar">
               <div class="row card">
                   <h1 class="fs-2 text-center fw-bold">Registrar Hotel</h1>
