@@ -21,6 +21,7 @@ export class LoginComponent implements OnInit {
   }
 
   login(){
-    
+    let data = this.form.value;
+    this.server.login(data)
   }
 }
