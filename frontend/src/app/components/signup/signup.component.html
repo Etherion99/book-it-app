@@ -104,23 +104,15 @@
                         <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt="">
                         <h3>Bienvenido</h3>
                         <p>Aquí puedes registrar tu hotel o registrarte para poder reservar y obtener nuestros descuentos por fidelidad</p>
-                        <button role="link " class="btn btn-primary" onclick="window.location='login.html'" deata-bs-dismiss="modal">
+                        <button role="link " class="btn btn-primary" routerLink="/login" deata-bs-dismiss="modal">
                         <i class="fa-solid fa-book"></i>
                                         Log In
                         </button>
                     </div>
                     <div class="col-md-9 register-right">
-                        <ul class="nav nav-tabs nav-justified" id="myTab" role="tablist">
-                            <li class="nav-item">
-                                <a class="nav-link" id="home-tab" data-toggle="tab" (click)="user()" role="tab" aria-controls="home" style="cursor:pointer;">Usuario</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" id="profile-tab" data-toggle="tab" (click)="admin()" role="tab" aria-controls="profile" style="cursor:pointer;">Admin</a>
-                            </li>
-                        </ul>
                         <div class="tab-content" id="myTabContent">
-                            <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab" *ngIf="!isAdmin" [formGroup]="form">
-                                <h3 class="register-heading">Registrate como usuario</h3>
+                            <div class="tab-pane active" id="home" role="tabpanel" aria-labelledby="home-tab" [formGroup]="form">
+                                <h3 class="register-heading"><strong>Registrate</strong></h3>
                                 <div class="row register-form">
                                     <div class="col-md-6">
                                         <div class="form-group">
@@ -153,60 +145,26 @@
                                             <input type="email" class="form-control" placeholder="Correo Electronico *" formControlName="email">
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" minlength="10" maxlength="10" name="txtEmpPhone" class="form-control" placeholder="Usuario *" formControlName="username">
+                                            <input type="text" minlength="10" maxlength="10" class="form-control" placeholder="Usuario *" formControlName="username">
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" minlength="10" maxlength="10" name="txtEmpPhone" class="form-control" placeholder="Documento *" formControlName="document">
-                                        </div>
-                                        
-                                        <button type="submit" class="btnRegister" (click)="SUUser()">Registrar</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="tab-pane active" id="profile" role="tabpanel" aria-labelledby="profile-tab" *ngIf="isAdmin">
-                                <h3 class="register-heading">Registrate como administrador</h3>
-                                <div class="row register-form">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="First Name *" value="">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="Last Name *" value="">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="email" class="form-control" placeholder="Email *" value="">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="text" maxlength="10" minlength="10" class="form-control" placeholder="Phone *" value="">
-                                        </div>
-
-
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <input type="password" class="form-control" placeholder="Password *" value="">
-                                        </div>
-                                        <div class="form-group">
-                                            <input type="password" class="form-control" placeholder="Confirm Password *" value="">
-                                        </div>
-                                        <div class="form-group">
-                                            <select class="form-control">
-                                                <option class="hidden" selected="" disabled="">Please select your Sequrity Question</option>
-                                                <option>What is your Birthdate?</option>
-                                                <option>What is Your old Phone Number</option>
-                                                <option>What is your Pet Name?</option>
+                                            <select class="form-control" name="" id="doc_type" formControlName="documenttype_id">
+                                                <option value="">Tipo Documento</option>
+                                                <option value="1">CC</option>
+                                                <option value="2">TI</option>
                                             </select>
                                         </div>
                                         <div class="form-group">
-                                            <input type="text" class="form-control" placeholder="`Answer *" value="">
+                                            <input type="text" minlength="10" maxlength="10" class="form-control" placeholder="Documento *" formControlName="document">
                                         </div>
-                                        <button type="submit" class="btnRegister" (click)="SUAdmin()">Registrar</button>
-                                        <!--<input type="submit" class="btnRegister" value="Add Info Sucursal">-->
+                                        
+                                        <button type="submit" class="btnRegister" (click)="signup()">Registrarme</button>
                                     </div>
                                 </div>
                             </div>
+                            
                         </div>
                     </div>
                 </div>
 
-            </div>				                            <script type="text/javascript"></script></body></html>
+            </div>				                     </body></html>
