@@ -30,7 +30,8 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         
     </head>
-    <body id="page-top">
+    
+    <body id="page-top" style="background-color: rgba(76, 135, 243, 0.87);">
 
         <!-- Navigation-->
         <div class="row">
@@ -75,12 +76,13 @@
           </div>
         </section>
       
-        <div id="diper" class="row">
-            <div class="col col-sm-4">
-                <div>
+        <div id="diper" class="mb-6 row container-fluid d-flex align-items-center justify-content-center rounded-1" style="background-color: whitesmoke;">
+            <div class="col col-sm-4 card">
+                <br>
+                <div class="card">
                   <h3 class="fs-3 text-center fw-bold">Mis datos:</h3>
                 </div>            
-                <div class="text-center">
+                <div class="text-center" >
                     <form class="col-12 row d-flex justify-content-center" action="/ActualizarUsuario" method="POST">
                         <div class="form-group row input-group d-flex">
                             <div class="col-sm-2 col-form-label"></div>
@@ -96,20 +98,31 @@
                                 <input name="NewEmail" type="text" style="text-align: center;"  class="form-control order-2" id="staticCorreo" >
                             </div>
                             </div>
-                        <div>
-                            <p>        
-                                <input id="try"type="submit"  value="Actualizar Datos"  class="btn btn-primary mb-10"> 
-                            </a>
-                            </p>  
+                        <div  class="row mb-2 justify-content-center">
+                            <input id="try"type="submit"  value="Actualizar Datos"  class="btn btn-primary mb-5" style="width: 50%;">                            
                         </div>          
                     </form>
-                </div> 
 
-                
+                    <div  class="row ccontainer-fluid d-flex align-items-center justify-content-center" style="width: 100%;">
+                        <div class="col container-fluid d-flex align-items-center justify-content-center mb-5" >
+                            <p>        
+                                <input id="try"type="submit"  value="Crear Sucursales"  class="btn btn-primary mb-10"> 
+                            </a>
+                            </p>  
+                        </div>  
+        
+                        <div class="col container-fluid d-flex align-items-center justify-content-center mb-5">
+                            <p>        
+                                <input id="try"type="submit"  value="Crear Habitaciones"  class="btn btn-primary mb-10"> 
+                            </a>
+                            </p>  
+                        </div> 
+                    </div>  
+                </div>     
             </div>   
             
-            <div class="col col-sm-8">
-                <div class="row">
+            <div class="col col-sm-8 card align-items-center justify-content-center">
+                <div class = "row container-fluid d-flex align-items-center justify-content-center"  style="width: 100%;">
                     <div>
                         <h3 class="fs-3 text-center fw-bold">Sucursales:</h3>
                     </div>
@@ -213,8 +226,8 @@
                       </div>
                        
                 </div>
-                <div class = "row">
-                    <div>
+                <div class = "row container-fluid d-flex align-items-center justify-content-center" style="width: 100%;">
+                    <div >
                         <h3 class="fs-3 text-center fw-bold">Habitaciones:</h3>
                     </div>
                     <div>
@@ -298,16 +311,14 @@
                         </table>
                       </div>
                        
-                 
-                    
                 </div>              
             </div>
         </div>              
              
 
-        <div id="diper"class="row">            
+        <div class="row container-fluid d-flex align-items-center justify-content-center rounded-1" style="background-color: whitesmoke;">            
             <form class="col-12 row d-flex justify-content-center" id="form">
-                <div class="row mb-5">
+                <div class="row card">
                     <h1 class="fs-2 text-center fw-bold">Crear Sucursal</h1>
                 </div>  
                 <div class="row mb-4">
@@ -340,17 +351,15 @@
                     </div>                    
                 </div>   
 
-                <div class="row">
-                    <p>
-                        <input type="submit"  value="Crear Sucursal"  class="btn btn-primary mb-10">                
-                    </p>    
+                <div class="row mb-2 justify-content-center">
+                    <input type="submit"  value="Crear Sucursal"  class="btn btn-primary mb-10" style="width: 40%;"> 
                 </div>
             </form> 
         </div>
         
-        <div id="diper" class="row">            
+        <div  class="row container-fluid d-flex align-items-center justify-content-center rounded-1" style="background-color: whitesmoke;">            
             <form class="col-12 row d-flex justify-content-center" id="form">
-                <div class="row mb-5">
+                <div class="row card">
                     <h1 class="fs-2 text-center fw-bold">Crear Habitación</h1>
                 </div>
                 <div class="row mb-4">
@@ -392,20 +401,11 @@
                     </div>
                 </div>
 
-                <div class="row">
-                    <p>        
-                        <input type="submit"  value="Crear Habitación"  class="btn btn-primary mb-10"> 
-                        </a>
-                    </p>
+                <div class="row mb-2 justify-content-center"> 
+                    <input type="submit"  value="Crear Habitación"  class="btn btn-primary mb-10" style="width: 40%;"> 
                 </div>
             </form>
-        </div>
-        
-          
-        
-        
-      
-      
+        </div>      
         
       <section></section>
       <footer class="footer text-center">
