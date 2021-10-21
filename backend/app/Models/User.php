@@ -17,8 +17,9 @@ class User extends Authenticatable
         'username',  
         'password',  
         'city_id',
-        'document',    
-        'gender',  
+        'document',  
+        'documenttype_id',
+        'gender_id',  
         'hotel_id',          
     ];
 
