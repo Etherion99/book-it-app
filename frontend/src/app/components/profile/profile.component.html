@@ -88,30 +88,32 @@
                   </div>  
 
                   <div class="form-group row">                        
-                    <label for="staticCorreo"  class="form-label fw-bold">Correo</label>
-                    <div class="col-sm-8" style="width: 100%;">
-                        <input name="NewEmail" type="text" style="text-align: center;"  class="form-control order-2" id="staticCorreo" >
+                    <div  class="row mx-0">
+                      <label for="Correo" class="col form-label fw-bold" style="width: 30%;">Correo</label>
+                      <input class="col form-control order-2" style="width: 60%;" id="Correo">
                     </div>
                   </div>
 
                   <div class="form-group row input-group d-flex">
-                    <label for="nombreHotel" class="form-label fw-bold">Username</label>
-                    <div class="col-sm-8" style="width: 100%;">
-                        <input type="text" class="form-control order-2" id="username">
+                    <div  class="row mx-0">
+                      <label for="username" class="col form-label fw-bold" style="width: 30%;">Username</label>
+                      <input class="col form-control order-2" style="width: 60%;" id="Username">
                     </div>
                   </div>
 
                   <div class="form-group row input-group d-flex">                    
-                    <label for="nombreHotel" class="form-label fw-bold">Contraseña</label>
-                    <div class="col-sm-8" style="width: 100%;">
-                        <input type="text" class="form-control order-2" id="contraseña">
+                    <div  class="row mx-0">
+                      <label for="Contraseña" class="col form-label fw-bold" style="width: 30%;">Contraseña</label>
+                      <input class="col form-control order-2" style="width: 60%;" id="Contraseña">
                     </div>
                   </div>                          
 
                   <div  class="row mb-2 ">
-                      <input id="try"type="submit"  value="Actualizar Datos"  class="btn btn-primary mb-5" style="width: 50%;">                            
+                      <input id="try" type="submit"  value="Actualizar Datos"  class="btn btn-primary mb-5" style="width: 50%;">                            
                   </div> 
-                  
+                  <div  class="row mb-2 ">
+                    <input id="try" href="#registrar"type="submit"  value="Registrar Hotel"  class="btn btn-primary mb-5" style="width: 50%;">                            
+                  </div>
                   <div  class="mb-6 row " style="background-color: whitesmoke;">
                     <div class="row">
                       <div>
@@ -119,7 +121,7 @@
                           <div class="row" style="text-align: left;">
                             <div class="col-sm-3">
                             <br> 
-                              <div class="col-sm-10">
+                              <div id="ty" class="col-sm-10">
                                     <select name="CitNameS" id="inputTdoc" class="form-control">
                                         <option name="CitName" value="Bucaramanga">Bucaramanga</option>                
                                     </select>
@@ -127,7 +129,7 @@
                             </div>
                             <div>
                               <p>
-                                <input  type="submit" value="Buscar"  class="btn btn-primary mb-10"> 
+                                <input  id="type" type="submit" value="Buscar"  class="btn btn-primary mb-10"> 
                               </p>  
                             </div>  
                           </div>
@@ -138,9 +140,7 @@
                                  
                 </form>
 
-                <div  class="row mb-2 ">
-                  <input id="try"type="submit"  value="Registrar Hotel"  class="btn btn-primary mb-5" style="width: 50%;">                            
-                </div>
+                
                 
             </div>     
         </div>   
@@ -253,6 +253,46 @@
             </div>
                 
         </div>
+        <div id="registrar" class="row mx-0 container-fluid d-flex align-items-center justify-content-center rounded-1" style="background-color: whitesmoke;">            
+          <form class="col-12 row d-flex justify-content-center" id="registrar">
+              <div class="row card">
+                  <h1 class="fs-2 text-center fw-bold">Registrar Hotel</h1>
+              </div>  
+              <div class="row mb-4">
+                  <div class="col">
+                      <label for="name" class="form-label fw-bold">Nombre</label>
+                      <div class="input-group d-flex">
+                          <input type="text" class="form-control order-2" name="name" id="name">
+                          <span class="input-group-text order-1"><i class="fas fa-id-card"></i></span>
+                          <span class="focus-border"><i></i></span>
+                          <div class="invalid-feedback order-3"></div>
+                      </div>    
+                  </div>
+                  <div class="col">
+                      <label for="nit" class="form-label fw-bold">NIT</label>
+                      <div class="input-group d-flex">
+                          <input type="text" class="form-control order-2" name="nit" id="nit">
+                          <span class="input-group-text order-1"><i class="fas fa-id-card"></i></span>
+                          <span class="focus-border"><i></i></span>
+                          <div class="invalid-feedback order-3"></div>
+                      </div>
+                  </div>
+                  <div class="col">
+                      <label for="pagina_Web" class="form-label fw-bold">Pàgina Web</label>
+                      <div class="input-group d-flex">
+                          <input type="text" class="form-control order-2" name="pagina_Web" id="pagina_Web">
+                          <span class="input-group-text order-1"><i class="fas fa-id-card"></i></span>
+                          <span class="focus-border"><i></i></span>
+                          <div class="invalid-feedback order-3"></div>
+                      </div>
+                  </div>                    
+              </div>   
+
+              <div class="row mx-0 mb-2 justify-content-center">
+                  <input type="submit"  value="Registrar Hotel"  class="btn btn-primary mb-10" style="width: 40%;"> 
+              </div>
+          </form> 
+      </div>
         
     </div>
       <section></section>
