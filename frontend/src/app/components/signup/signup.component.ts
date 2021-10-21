@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { ApiService } from 'src/app/services/api.service';
 
 @Component({
   selector: 'app-signup',
@@ -18,7 +19,9 @@ export class SignupComponent implements OnInit {
     document: new FormControl('')
   });
   
-  constructor() { }
+  constructor(
+    private server: ApiService
+  ) { }
 
   ngOnInit(): void {
   }
@@ -32,7 +35,12 @@ export class SignupComponent implements OnInit {
   }
 
   SUUser(){
-    console.log(this.form.value)
+    let data = this.form.value;
+    data['city_id'] = 851;
+
+    this.server.signup(data).subscribe(res => {
+      console.log(res);
+    });
   }
 
   SUAdmin(){

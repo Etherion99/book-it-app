@@ -6,17 +6,17 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ApiService {
-  private API = 'http://localhost:8000/api';
+  private API = 'http://localhost:8000/api/';
 
   constructor(
     private http:HttpClient
   ) { }
 
   signup(data:Object):Observable<any>{
-    return this.http.post(this.API+'/auth/signup', data);
+    return this.http.post(this.API+'auth/singup', data);
   }
 
   login(data:Object):Observable<any>{
-    return this.http.post(this.API+'/auth/login', data);
+    return this.http.post(this.API+'auth/login', data);
   }
 }
