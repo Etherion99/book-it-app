@@ -75,21 +75,21 @@
       <div id="diper" class="mb-6 row container-fluid d-flex align-items-center justify-content-center rounded-1" style="background-color: whitesmoke;">
         <div class="col col-sm-4 card">
         </br>
-            <div class="card">
+            <div class="card mb-5 ">
               <h3 class="fs-3 text-center fw-bold">Mis datos:</h3>
             </div>            
             <div class="text-center" >
-                <form class="col-12 row d-flex justify-content-center" action="/ActualizarUsuario" method="POST">4
+                <form class="col-12 row d-flex justify-content-center" action="/ActualizarUsuario" method="POST">
                   <div class="form-group row input-group d-flex"> 
-                    <div class="row" style="width: 100%;">
-                      <label for="nombreHotel" class="form-label fw-bold">Nombre</label>
-                      <input type="text" class="form-control order-2" id="nombreHotel">
+                    <div class="row mx-0">
+                      <label for="nombreHotel" class=" col form-label fw-bold" style="width: 30%;">Nombre</label>
+                      <input type="text" class="col form-control order-2" style="width: 60%;" id="nombreHotel">
                     </div>                  
                   </div>  
-                  <div class="form-group row input-group d-flex">                   
-                    <label for="nombreHotel" class="form-label fw-bold">Apellido</label>
-                    <div class="col-sm-8" style="width: 100%;">
-                        <input type="text" class="form-control order-2" id="Apellido">
+                  <div class="form-group row input-group d-flex">      
+                    <div  class="row mx-0">
+                      <label for="nombreHotel" class="col form-label fw-bold" style="width: 30%;">Apellido</label>
+                      <input class="col form-control order-2" style="width: 60%;" id="Apellido">
                     </div>
                   </div>  
 
@@ -135,7 +135,7 @@
                               <p>
                                 <input  type="submit" value="Buscar"  class="btn btn-primary mb-10"> 
                               </p>  
-                            </div>                  
+                            </div>  
                           </div>
                         </form>
                       </div>
@@ -144,6 +144,9 @@
                                  
                 </form>
 
+                <div  class="row mb-2 ">
+                  <input id="try"type="submit"  value="Registrar Hotel"  class="btn btn-primary mb-5" style="width: 50%;">                            
+                </div>
                 
             </div>     
         </div>   
