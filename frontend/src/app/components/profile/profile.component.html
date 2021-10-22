@@ -176,25 +176,24 @@
                 <tr>
                   <th scope="col">ID</th>
                   <th scope="col">Dia</th>
-                  <th scope="col">Hora</th>
                   <th scope="col">Hotel</th>
                   <th scope="col">Sucursal</th>
                   <th scope="col">Habitación</th>
-                  <th scope="col">Tiempo(Horas)</th>
+                  <th scope="col">Estancia(Días)</th>
+                  <th scope="col">Tiempo restante(Días)</th>
                   <th scope="col">Costo</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <th scope="row"></th>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-                  <td></td>
-
+                <tr *ngFor="let resv of reservs; let i = index">
+                  <td>{{resv.id}}</td>
+                  <td>{{resv.date | date:'dd/MM/yyyy'}}</td>
+                  <td>{{resv.room.branch.hotel.name}}</td>
+                  <td>{{resv.room.branch.name}}</td>
+                  <td>{{resv.room.room_number}}</td>
+                  <td>{{resv.time}}</td>
+                  <td>{{resv.remaining}}</td>
+                  <td>{{resv.total_cost}}</td>
                 </tr>
               </tbody>
             </table>

@@ -43,4 +43,8 @@ export class ApiService {
   reservar(data:Object):Observable<any>{
     return this.http.post(this.API+'room/book', data);
   }
+
+  history(id:number):Observable<any>{
+    return this.http.get(this.API+'book/history/'+id);
+  }
 }

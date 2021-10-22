@@ -58,6 +58,7 @@ export class ProfileComponent implements OnInit {
       this.search();
     }, 1000);*/
     this.search();
+    this.history();
   }
 
   update(){
@@ -130,7 +131,14 @@ export class ProfileComponent implements OnInit {
   }
 
   history(){
-
+    this.server.history(parseInt(localStorage.getItem('user') || '0')).subscribe(res => {
+      if(res['ok']){
+        this.reservs = res['data'];
+        console.log(this.reservs);
+      }else{
+        alert(res['message']);
+      }
+    });
   }
 }
 

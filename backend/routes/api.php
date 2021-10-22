@@ -10,6 +10,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\CityController;
 use App\Http\Controllers\DepartmentsController;
 use App\Http\Controllers\RoomsController;
+use App\Http\Controllers\BookingsController;
 
 Route::group(['prefix' => 'auth'], function (){
     Route::post('singup', [AuthController::class, 'signup']);
@@ -34,6 +35,11 @@ Route::group(['prefix' => 'room'], function (){
     Route::get('find_by_city/{city}', [RoomsController::class, 'findByCity']);
     Route::post('book', [RoomsController::class, 'book']);
 });
+
+Route::group(['prefix' => 'book'], function (){
+    Route::get('history/{user}', [BookingsController::class, 'history']);
+});
+
 
 Route::post('branch/create',[AuthController::class, 'newBranch']);
 Route::post('room/create',[AuthController::class, 'newRoom']);
