@@ -55,4 +55,24 @@ export class ApiService {
   adminRooms(user:number):Observable<any>{
     return this.http.get(this.API+'room/find_by_admin/'+user);
   }
+
+  adminSucs(user:number):Observable<any>{
+    return this.http.get(this.API+'branch/find_by_admin/'+user);
+  }
+
+  deleteRoom(id:number):Observable<any>{
+    return this.http.delete(this.API+'room/delete/'+id);
+  }
+
+  deleteSuc(id:number):Observable<any>{
+    return this.http.delete(this.API+'branch/delete/'+id);
+  }
+
+  regRoom(data:object):Observable<any>{
+    return this.http.post(this.API+'room/create', data);
+  }
+
+  regSuc(data:object):Observable<any>{
+    return this.http.post(this.API+'branch/create', data);
+  }
 }

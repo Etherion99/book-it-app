@@ -35,6 +35,14 @@ Route::group(['prefix' => 'room'], function (){
     Route::get('find_by_city/{city}', [RoomsController::class, 'findByCity']);
     Route::get('find_by_admin/{user}', [RoomsController::class, 'findByAdmin']);
     Route::post('book', [RoomsController::class, 'book']);
+    Route::delete('delete/{id}', [RoomsController::class, 'delete']);
+    Route::post('create', [RoomsController::class, 'create']);
+});
+
+Route::group(['prefix' => 'branch'], function (){
+    Route::get('find_by_admin/{user}', [BranchesController::class, 'findByAdmin']);
+    Route::delete('delete/{id}', [BranchesController::class, 'delete']);
+    Route::post('create', [BranchesController::class, 'create']);
 });
 
 Route::group(['prefix' => 'book'], function (){
@@ -44,9 +52,5 @@ Route::group(['prefix' => 'book'], function (){
 Route::group(['prefix' => 'hotel'], function (){
     Route::post('create', [HotelsController::class, 'create']);
 });
-
-
-Route::post('branch/create',[AuthController::class, 'newBranch']);
-Route::post('room/create',[AuthController::class, 'newRoom']);
 
 

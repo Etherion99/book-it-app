@@ -10,7 +10,8 @@ class Room extends Model
     protected $fillable = [
         'room_number',
         'roomtype_id',
-        'branch_id',        
+        'branch_id',
+        'description'       
     ];
 
     //Relación 1-n con bookings

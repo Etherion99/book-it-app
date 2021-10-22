@@ -13,7 +13,8 @@ class Branch extends Model
         'address',
         'phone',
         'description',
-        'city_id'
+        'city_id',
+        'hotel_id'
     ];
  
     // Relación n-1 con : branchtype-city-hotel

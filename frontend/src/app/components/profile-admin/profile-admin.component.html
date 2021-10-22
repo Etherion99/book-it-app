@@ -110,10 +110,12 @@
               <button class="btn btn-primary mb-3 mx-0" style="width: 40%;" (click)="update()">Actualizar Datos</button>
             </div>
 
-            <div class="row mx-0 justify-content-center px-0" style="width: 40%;">
-              <button pButton type="button" class="p-button-success" (click)="showModal()" icon="pi pi-plus"
-                label="Registrar Hotel"></button>
-            </div>
+            <div class="row mx-0 justify-content-center px-0">
+                <div style="width: 60%;">
+                <button pButton type="button" class="p-button-success" (click)="showModal1()" icon="pi pi-plus"
+                    label="Registrar Sucursal"></button>
+                </div>
+            </div>            
           </div>
         </div>
       </div>
@@ -130,22 +132,22 @@
                 <th scope="col-sm-1">#</th>
                 <th scope="col-sm-2">Sucursal</th>
                 <th scope="col-sm-1">Ciudad</th>
-                <th scope="col">Correo</th>
+                <th scope="col">Dirección</th>
                 <th scope="col">Telefono</th>
-                <th scope="col">Ver Sucursal</th>
+                <th scope="col">Reg. Habitación</th>
                 <th scope="col">Eliminar Sucursal</th>
               </tr>
             </thead>
             <tbody>
-              <tr>
-                <th scope="row"></th>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-                <td></td>
-              </tr>
+                <tr *ngFor="let suc of sucs">
+                    <th>{{suc.id}}</th>
+                    <th>{{suc.name}}</th>
+                    <th>{{suc.city.name}}</th>
+                    <th>{{suc.address}}</th>
+                    <th>{{suc.phone}}</th>
+                    <td><button class="btn btn-success mb-10" (click)="showModal2(suc)">Registrar</button></td>
+                    <td><button class="btn btn-danger mb-10" (click)="deleteSuc(suc)">Eliminar</button></td> 
+                  </tr>
             </tbody>
           </table>
         </div>
@@ -171,7 +173,7 @@
                   <td>{{room.branch.name}}</td>
                   <td>{{room.roomtype.name}}</td>
                   <td>{{room.room_number}}</td>
-                  <td></td>  
+                  <td><button class="btn btn-danger mb-10" (click)="deleteRoom(room)">Eliminar</button></td> 
                 </tr>
               </tbody>
             </table>
@@ -181,98 +183,130 @@
   </div>
 
 
-  <div class="row mx-0 container-fluid d-flex align-items-center justify-content-center rounded-1"
+  <p-dialog [modal]="true" [(visible)]="modal1" class="row mx-0 container-fluid d-flex align-items-center justify-content-center rounded-1"
     style="background-color: whitesmoke;">
-    <form class="col-12 row d-flex justify-content-center" id="form">
-      <div class="row card">
+    <div class="col-12 row d-flex justify-content-center" id="form" [formGroup]="sucF">
+      <div class="row">
         <h1 class="fs-2 text-center fw-bold">Crear Sucursal</h1>
       </div>
-      <div class="row mb-4">
+      <div class="row my-3">
         <div class="col">
-          <label for="name" class="form-label fw-bold">Dirección</label>
-          <div class="input-group d-flex">
-            <input type="text" class="form-control order-2" name="name" id="name">
-            <span class="input-group-text order-1"><i class="fas fa-id-card"></i></span>
-            <span class="focus-border"><i></i></span>
-            <div class="invalid-feedback order-3"></div>
-          </div>
+            <label for="name" class="form-label fw-bold">Nombre</label>
+            <div class="input-group d-flex">
+                <input type="text" class="form-control order-2" name="name" id="name" formControlName="name">
+                <span class="input-group-text order-1"><i class="fas fa-id-card"></i></span>
+                <span class="focus-border"><i></i></span>
+                <div class="invalid-feedback order-3"></div>
+            </div>
         </div>
         <div class="col">
-          <label for="lastname" class="form-label fw-bold">Telefono</label>
-          <div class="input-group d-flex">
-            <input type="text" class="form-control order-2" name="lastname" id="lastname">
-            <span class="input-group-text order-1"><i class="fas fa-id-card"></i></span>
-            <span class="focus-border"><i></i></span>
-            <div class="invalid-feedback order-3"></div>
-          </div>
+            <label for="name" class="form-label fw-bold">Dirección</label>
+            <div class="input-group d-flex">
+                <input type="text" class="form-control order-2" name="name" id="name" formControlName="address">
+                <span class="input-group-text order-1"><i class="fas fa-id-card"></i></span>
+                <span class="focus-border"><i></i></span>
+                <div class="invalid-feedback order-3"></div>
+            </div>
         </div>
         <div class="col">
-          <label for="lastname" class="form-label fw-bold">Ciudad</label>
-          <div class="input-group d-flex">
-            <input type="text" class="form-control order-2" name="lastname" id="lastname">
-            <span class="input-group-text order-1"><i class="fas fa-id-card"></i></span>
-            <span class="focus-border"><i></i></span>
-            <div class="invalid-feedback order-3"></div>
-          </div>
+            <label for="name" class="form-label fw-bold">Teléfono</label>
+            <div class="input-group d-flex">
+                <input type="text" class="form-control order-2" name="name" id="name" formControlName="phone">
+                <span class="input-group-text order-1"><i class="fas fa-id-card"></i></span>
+                <span class="focus-border"><i></i></span>
+                <div class="invalid-feedback order-3"></div>
+            </div>
         </div>
       </div>
-
+      <div class="row my-3">
+          <div class="col">
+            <label for="lastname" class="form-label fw-bold">Tipo</label>
+            <div class="input-group d-flex">
+                <select class="form-control" formControlName="branchtype_id">
+                    <option value="1">Tipo 1</option>
+                    <option value="2">Tipo 2</option>
+                    <option value="3">Tipo 3</option>
+                </select>
+                <span class="focus-border"><i></i></span>
+                <div class="invalid-feedback order-3"></div>
+            </div>
+          </div>
+        <div class="col">
+            <label for="name" class="form-label fw-bold">Departamento</label>
+            <select class="form-select" (change)="loadCities()" formControlName="department">
+                <option value="">Departamento</option>
+                <option *ngFor="let dpt of departments" [value]="dpt.id">{{dpt.name}}</option>
+              </select>
+        </div>
+        <div class="col">
+            <label for="name" class="form-label fw-bold">Ciudad</label>
+            <select class="form-select" formControlName="city_id">
+                <option value="">Ciudad</option>
+                <option *ngFor="let city of cities" [value]="city.id">{{city.name}}</option>
+            </select>
+        </div>
+      </div>
+      <div class="row mb-5 mt-3">
+        <div class="col">
+            <label for="lastname" class="form-label fw-bold">Descripción</label>
+            <div class="input-group d-flex">
+              <textarea class="form-control" formControlName="description"></textarea>
+              <div class="invalid-feedback order-3"></div>
+            </div>
+          </div>
+      </div>
       <div class="row mx-0 mb-2 justify-content-center">
-        <input type="submit" value="Crear Sucursal" class="btn btn-primary mb-10" style="width: 40%;">
+        <button class="btn btn-primary mb-10" style="width: 40%;" (click)="regSuc()">Crear Sucursal</button>
       </div>
-    </form>
-  </div>
+    </div>
+    </p-dialog>
 
-  <div class="row mx-0 container-fluid d-flex align-items-center justify-content-center rounded-1"
+    <p-dialog [modal]="true" [(visible)]="modal2" class="row mx-0 container-fluid d-flex align-items-center justify-content-center rounded-1"
     style="background-color: whitesmoke;">
-    <form class="col-12 row d-flex justify-content-center" id="form">
-      <div class="row mx-0 card">
+    <div class="col-12 row d-flex justify-content-center my-5" id="form" [formGroup]="roomF">
+      <div class="row mx-0">
         <h1 class="fs-2 text-center fw-bold">Crear Habitación</h1>
       </div>
-      <div class="row mb-4">
+      <div class="row mb-3 mt-5">
         <div class="col">
-          <label for="name" class="form-label fw-bold">Dirección</label>
+          <label for="name" class="form-label fw-bold">Número</label>
           <div class="input-group d-flex">
-            <input type="text" class="form-control order-2" name="name" id="name">
-            <span class="input-group-text order-1"><i class="fas fa-id-card"></i></span>
+            <input type="number" class="form-control order-2" formControlName="room_number">
+            <span class="input-group-text order-1"><i class="fas fa-building"></i></span>
             <span class="focus-border"><i></i></span>
             <div class="invalid-feedback order-3"></div>
           </div>
         </div>
         <div class="col">
-          <label for="lastname" class="form-label fw-bold">Telefono</label>
+          <label for="lastname" class="form-label fw-bold">Tipo</label>
           <div class="input-group d-flex">
-            <input type="text" class="form-control order-2" name="lastname" id="lastname">
-            <span class="input-group-text order-1"><i class="fas fa-id-card"></i></span>
+            <select class="form-control" formControlName="roomtype_id">
+                <option value="1">Habitacion Individual</option>
+                <option value="2">Habitacion doble</option>
+                <option value="3">Habitacion triple</option>
+                <option value="4">Suite mini</option>
+                <option value="5">Suite presidencial</option>
+            </select>
             <span class="focus-border"><i></i></span>
             <div class="invalid-feedback order-3"></div>
           </div>
-        </div>
+        </div>    
+      </div>
+      <div class="row mb-5">
         <div class="col">
-          <label for="lastname" class="form-label fw-bold">Ciudad</label>
-          <div class="input-group d-flex">
-            <input type="text" class="form-control order-2" name="lastname" id="lastname">
-            <span class="input-group-text order-1"><i class="fas fa-id-card"></i></span>
-            <span class="focus-border"><i></i></span>
-            <div class="invalid-feedback order-3"></div>
+            <label for="lastname" class="form-label fw-bold">Descripción</label>
+            <div class="input-group d-flex">
+              <textarea class="form-control" formControlName="description"></textarea>
+              <div class="invalid-feedback order-3"></div>
+            </div>
           </div>
-        </div>
-        <div class="col">
-          <label for="lastname" class="form-label fw-bold">Sucursal</label>
-          <div class="input-group d-flex">
-            <input type="text" class="form-control order-2" name="lastname" id="lastname">
-            <span class="input-group-text order-1"><i class="fas fa-id-card"></i></span>
-            <span class="focus-border"><i></i></span>
-            <div class="invalid-feedback order-3"></div>
-          </div>
-        </div>
       </div>
 
       <div class="row mb-2 justify-content-center">
-        <input type="submit" value="Crear Habitación" class="btn btn-primary mb-10" style="width: 40%;">
+        <button class="btn btn-primary mb-10" style="width: 40%;" (click)="regRoom()">Crear Habitación</button>
       </div>
-    </form>
-  </div>
+    </div>
+    </p-dialog>
 
   <section></section>
   <footer class="footer text-center">
