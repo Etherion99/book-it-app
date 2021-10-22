@@ -47,4 +47,8 @@ export class ApiService {
   history(id:number):Observable<any>{
     return this.http.get(this.API+'book/history/'+id);
   }
+
+  regHotel(data:object):Observable<any>{
+    return this.http.post(this.API+'hotel/create', data);
+  }
 }

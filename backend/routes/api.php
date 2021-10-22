@@ -40,6 +40,10 @@ Route::group(['prefix' => 'book'], function (){
     Route::get('history/{user}', [BookingsController::class, 'history']);
 });
 
+Route::group(['prefix' => 'hotel'], function (){
+    Route::post('create', [HotelsController::class, 'create']);
+});
+
 
 Route::post('branch/create',[AuthController::class, 'newBranch']);
 Route::post('room/create',[AuthController::class, 'newRoom']);

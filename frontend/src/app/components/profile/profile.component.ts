@@ -11,6 +11,7 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class ProfileComponent implements OnInit {
   Math = Math;
+  modal = false;
 
   updateF = new FormGroup({
     name: new FormControl('juan'),
@@ -23,6 +24,12 @@ export class ProfileComponent implements OnInit {
   searchF = new FormGroup({
     department: new FormControl('21'),
     city: new FormControl('851')
+  });
+
+  hotelF = new FormGroup({
+    name: new FormControl('Imperial'),
+    nit: new FormControl('851545465'),
+    web_page: new FormControl('www.hotel-imperial.com')
   });
 
   departments:any[] = [];
@@ -139,6 +146,24 @@ export class ProfileComponent implements OnInit {
         alert(res['message']);
       }
     });
+  }
+
+  regHotel(){
+    let data = this.hotelF.value;
+    data['user'] = parseInt(localStorage.getItem('user') || '0');
+
+    this.server.regHotel(data).subscribe(res => {
+      if(res['ok']){
+        alert('Has registrado tu hotel, felicitaciones ahora eres Admin');
+        this.router.navigate(['/profile-admin']);
+      }else{
+        alert(res['message']);
+      }
+    });
+  }
+
+  showModal(){
+    this.modal = true;
   }
 }
 

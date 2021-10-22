@@ -62,7 +62,7 @@
   </section>
   <div id="diper" class="row mx-0 py-5 container-fluid d-flex align-items-start justify-content-center rounded-1" style="background-color: whitesmoke;">
     <div class="col-4 pr-4">
-      <div class="card">
+      <div class="card p-5">
         <div class="m-2">
           <h3 class="fs-3 text-center fw-bold">Mis datos:</h3>
         </div>
@@ -105,19 +105,19 @@
             </div>
 
             <div class="row mx-0 d-flex justify-content-center">
-              <button id="try" type="submit" value="" class="btn btn-primary mb-3 mx-0" style="width: 40%;"
+              <button class="btn btn-primary mb-3 mx-0" style="width: 40%;"
                 (click)="update()">Actualizar Datos</button>
             </div>
+            
+            <div class="row mx-0 justify-content-center px-0" style="width: 40%;">              
+              <button pButton type="button" class="p-button-success" (click)="showModal()" icon="pi pi-plus" label="Registrar Hotel"></button>
+            </div>
           </div>
-        </div>
-        <div class="container row mx-0 d-flex justify-content-center">
-          <input id="try" data-toggle="modal" data-target="#popupNuevaAventura" href="#registrar" type="submit"
-            value="Registrar Hotel" class="btn btn-primary mx-0" style="width: 60%;">
         </div>
       </div>
     </div>
     <div class="col-8 pl-4">
-      <div class="justify-content-center card p-4">
+      <div class="justify-content-center card p-5">
         <div>
           <h3 class="fs-3 text-center fw-bold">Busca tu habitación:</h3>
         </div>
@@ -193,7 +193,7 @@
                   <td>{{resv.room.room_number}}</td>
                   <td>{{resv.time}}</td>
                   <td>{{resv.remaining}}</td>
-                  <td>{{resv.total_cost}}</td>
+                  <td>${{resv.total_cost}} COP</td>
                 </tr>
               </tbody>
             </table>
@@ -202,20 +202,16 @@
       </div>
     </div>
 
-
-
-
-    <div id="registrar" class="row mx-0 container-fluid d-flex align-items-center justify-content-center rounded-1"
-      style="background-color: whitesmoke;">
-      <form class="col-12 row d-flex justify-content-center" id="registrar">
-        <div class="row card">
+    <p-dialog [modal]="true" [(visible)]="modal" id="registrar" class="row mx-0 card container-fluid d-flex align-items-center justify-content-center rounded-1">
+      <div class="col-12 row d-flex justify-content-center" id="registrar" [formGroup]="hotelF">
+        <div class="row">
           <h1 class="fs-2 text-center fw-bold">Registrar Hotel</h1>
         </div>
-        <div class="row mb-4">
+        <div class="row mb-4 col-10 offset-1 my-5 py-3">
           <div class="col">
             <label for="name" class="form-label fw-bold">Nombre</label>
             <div class="input-group d-flex">
-              <input type="text" class="form-control order-2" name="name" id="name">
+              <input type="text" class="form-control order-2" name="name" id="name" formControlName="name">
               <span class="input-group-text order-1"><i class="fas fa-id-card"></i></span>
               <span class="focus-border"><i></i></span>
               <div class="invalid-feedback order-3"></div>
@@ -224,7 +220,7 @@
           <div class="col">
             <label for="nit" class="form-label fw-bold">NIT</label>
             <div class="input-group d-flex">
-              <input type="text" class="form-control order-2" name="nit" id="nit">
+              <input type="text" class="form-control order-2" name="nit" id="nit" formControlName="nit">
               <span class="input-group-text order-1"><i class="fas fa-shield-alt"></i></span>
               <span class="focus-border"><i></i></span>
               <div class="invalid-feedback order-3"></div>
@@ -233,7 +229,7 @@
           <div class="col">
             <label for="pagina_Web" class="form-label fw-bold">Pàgina Web</label>
             <div class="input-group d-flex">
-              <input type="text" class="form-control order-2" name="pagina_Web" id="pagina_Web">
+              <input type="text" class="form-control order-2" name="pagina_Web" id="pagina_Web" formControlName="web_page">
               <span class="input-group-text order-1"><i class="fas fa-cloud"></i></span>
               <span class="focus-border"><i></i></span>
               <div class="invalid-feedback order-3"></div>
@@ -242,11 +238,11 @@
         </div>
 
         <div class="row mx-0 mb-2 justify-content-center">
-          <input type="submit" value="Registrar Hotel" class="btn btn-primary mb-10" style="width: 40%;">
+          <button class="btn btn-primary mb-10" style="width: 40%;" (click)="regHotel()">Registrar Hotel</button>
         </div>
-      </form>
+      </div>
 
-    </div>
+    </p-dialog>
 
   </div>
   <section></section>
