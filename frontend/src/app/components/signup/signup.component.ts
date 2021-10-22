@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 
 @Component({
@@ -20,7 +21,8 @@ export class SignupComponent implements OnInit {
   });
 
   constructor(
-    private server: ApiService
+    private server: ApiService,
+    private router:Router
   ) { }
 
   ngOnInit(): void {
@@ -34,7 +36,11 @@ export class SignupComponent implements OnInit {
     data['documenttype_id'] = parseInt(data['documenttype_id']);
 
     this.server.signup(data).subscribe(res => {
-      console.log(res);
+      if(res['ok']){
+        this.router.navigate(['/profile']);
+      }else{
+        alert('Ha ocurrido un error al comunicarse con la base de datos.');
+      }
     });
   }
 }
