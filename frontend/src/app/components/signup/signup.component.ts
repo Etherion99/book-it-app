@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 
@@ -11,14 +11,22 @@ import { ApiService } from 'src/app/services/api.service';
 export class SignupComponent implements OnInit {
   
   form = new FormGroup({
-    name: new FormControl('juan'),
-    lastname: new FormControl('trujillo'),
-    email: new FormControl('juansttt99@gmail.com'),
-    username: new FormControl('juan44'),
-    password: new FormControl('12345'),
-    document: new FormControl('12345'),
+    name: new FormControl('juan',[Validators.required, Validators.minLength(4)]),
+    lastname: new FormControl('trujillo',[Validators.required, Validators.minLength(4)]),
+    email: new FormControl('juansttt99@gmail.com',Validators.email),
+    username: new FormControl('juan44',[Validators.required, Validators.minLength(4),Validators.pattern('^[a-zA-Z0-9]([._-](?![._-])|[a-zA-Z0-9]){3,18}[a-zA-Z0-9]$')]),
+    password: new FormControl('12345',[Validators.required,Validators.pattern('^(?=^.{8,}$)((?=.*\d)|(?=.*\W+))(?![.\n])(?=.*[A-Z])(?=.*[a-z]).*$")')]),
+    document: new FormControl('12345',[Validators.required, Validators.minLength(8),Validators.maxLength(11),Validators.pattern('^[0-9]')]),
     documenttype_id: new FormControl('1')
   });
+  //A password contains at least eight characters, including at least one number and includes both lower and uppercase letters and special characters
+  /*Username requirements
+      Username consists of alphanumeric characters (a-zA-Z0-9), lowercase, or uppercase.
+      Username allowed of the dot (.), underscore (_), and hyphen (-).
+      The dot (.), underscore (_), or hyphen (-) must not be the first or last character.
+      The dot (.), underscore (_), or hyphen (-) does not appear consecutively, e.g., java..regex
+      The number of characters must be between 5 to 20.
+  */
 
   constructor(
     private server: ApiService,

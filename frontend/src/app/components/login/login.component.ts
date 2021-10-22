@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { FormControl, FormGroup, Validators} from '@angular/forms';
 import { Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 
@@ -10,8 +10,8 @@ import { ApiService } from 'src/app/services/api.service';
 })
 export class LoginComponent implements OnInit {
   form = new FormGroup({
-    email: new FormControl('juansttt99@gmail.com'),
-    password: new FormControl('12345'),
+    email: new FormControl('juansttt99@gmail.com',[Validators.required,Validators.email]),
+    password: new FormControl('12345',[Validators.required]),
   });
 
   constructor(
