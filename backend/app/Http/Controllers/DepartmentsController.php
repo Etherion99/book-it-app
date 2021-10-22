@@ -14,7 +14,7 @@ class DepartmentsController extends Controller
         ];
 
         try{
-            $departments = Department::select(['id', 'name'])->get();
+            $departments = Department::select(['id', 'name'])->orderBy('name', 'asc')->get();
             $res['data'] = $departments;
         }catch(\Illuminate\Database\QueryException $e){
             $res = [

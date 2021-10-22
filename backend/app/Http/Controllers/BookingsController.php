@@ -33,5 +33,23 @@ class BookingsController extends Controller
         }
         
         return $res;
-    }   
+    }
+    
+    public function delete($id){
+        $res = [
+            'ok' => true,
+            'message' => ''
+        ];
+
+        try{
+            Booking::destroy($id);           
+        }catch(\Illuminate\Database\QueryException $e){
+            $res = [
+                'ok' => false,
+                'message' => $e->getMessage()
+            ];
+        }
+        
+        return $res;
+    }
 }

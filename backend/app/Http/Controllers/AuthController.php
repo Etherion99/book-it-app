@@ -50,6 +50,7 @@ class AuthController extends Controller
                 ];
             }else{
                 $res['id'] = $user->id;
+                $res['admin'] = $user->hotel_id != null;
             }
         }else{
             $res = [

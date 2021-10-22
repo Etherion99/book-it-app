@@ -47,6 +47,7 @@ Route::group(['prefix' => 'branch'], function (){
 
 Route::group(['prefix' => 'book'], function (){
     Route::get('history/{user}', [BookingsController::class, 'history']);
+    Route::delete('delete/{id}', [BookingsController::class, 'delete']);
 });
 
 Route::group(['prefix' => 'hotel'], function (){

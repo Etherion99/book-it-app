@@ -14,7 +14,7 @@ class CityController extends Controller
         ];
 
         try{
-            $cities = City::select(['id', 'name'])->where('department_id', $department)->get();
+            $cities = City::select(['id', 'name'])->where('department_id', $department)->orderBy('name', 'asc')->get();
             $res['data'] = $cities;
         }catch(\Illuminate\Database\QueryException $e){
             $res = [

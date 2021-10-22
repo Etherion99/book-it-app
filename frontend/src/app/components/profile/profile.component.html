@@ -195,7 +195,7 @@
                   <td>{{resv.time}}</td>
                   <td>{{resv.remaining}}</td>
                   <td>${{resv.total_cost}} COP</td>
-                  <td><button class="btn btn-danger mb-10">Cancelar</button></td>
+                  <td><button class="btn btn-danger mb-10" (click)="cancel(resv)">Cancelar</button></td>
                 </tr>
               </tbody>
             </table>

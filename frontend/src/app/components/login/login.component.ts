@@ -27,7 +27,13 @@ export class LoginComponent implements OnInit {
     this.server.login(data).subscribe(res => {
       if(res['ok']){
         localStorage.setItem('user', res['id']);
-        this.router.navigate(['/profile']);
+        localStorage.setItem('admin', res['admin']);
+
+        if(res['admin']){
+          this.router.navigate(['/profile-admin']);
+        }else{
+          this.router.navigate(['/profile']);
+        }        
       }else{
         alert(res['message']);
       }

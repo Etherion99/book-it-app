@@ -60,6 +60,10 @@ export class ApiService {
     return this.http.get(this.API+'branch/find_by_admin/'+user);
   }
 
+  deleteBook(id:number):Observable<any>{
+    return this.http.delete(this.API+'book/delete/'+id);
+  }
+
   deleteRoom(id:number):Observable<any>{
     return this.http.delete(this.API+'room/delete/'+id);
   }

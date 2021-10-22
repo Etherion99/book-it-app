@@ -22,8 +22,8 @@ export class ProfileComponent implements OnInit {
   });
 
   searchF = new FormGroup({
-    department: new FormControl('21'),
-    city: new FormControl('851')
+    department: new FormControl(''),
+    city: new FormControl('')
   });
 
   hotelF = new FormGroup({
@@ -43,7 +43,11 @@ export class ProfileComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
-    /*this.server.findUser(parseInt(localStorage.getItem('user') || '0')).subscribe(res => {
+    if( (localStorage.getItem('user') || '') == ''){
+      this.router.navigate(['/login']);
+    }
+
+    this.server.findUser(parseInt(localStorage.getItem('user') || '0')).subscribe(res => {
       if(res['ok']){
         this.updateF.patchValue(res['data']);
       }else{
@@ -59,12 +63,6 @@ export class ProfileComponent implements OnInit {
       }
     });
 
-    this.loadCities();
-
-    setTimeout(() => {
-      this.search();
-    }, 1000);*/
-    this.search();
     this.history();
   }
 
@@ -156,6 +154,17 @@ export class ProfileComponent implements OnInit {
       if(res['ok']){
         alert('Has registrado tu hotel, felicitaciones ahora eres Admin');
         this.router.navigate(['/profile-admin']);
+      }else{
+        alert(res['message']);
+      }
+    });
+  }
+
+  cancel(book:any){
+    this.server.deleteBook(book.id).subscribe(res => {
+      if(res['ok']){
+        alert('Tu reservación ha sido cancelada :(');
+        this.history();
       }else{
         alert(res['message']);
       }

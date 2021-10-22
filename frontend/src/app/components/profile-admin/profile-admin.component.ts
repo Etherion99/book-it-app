@@ -9,7 +9,7 @@ import { ApiService } from 'src/app/services/api.service';
   styleUrls: ['./profile-admin.component.css']
 })
 export class ProfileAdminComponent implements OnInit {
-  modal1:boolean = true;
+  modal1:boolean = false;
   modal2:boolean = false;
   selectedSuc:number = 0;
   department:number = 0;
@@ -49,6 +49,10 @@ export class ProfileAdminComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    if( (localStorage.getItem('user') || '') == ''){
+      this.router.navigate(['/login']);
+    }
+    
     this.server.loadDpts().subscribe(res => {
       if(res['ok']){
         this.departments = res['data'];
@@ -131,6 +135,7 @@ export class ProfileAdminComponent implements OnInit {
     this.server.regRoom(data).subscribe(res => {
       if(res['ok']){
         this.modal2 = false;
+        this.loadRooms();
       }else{
         alert(res['message']);
       }
@@ -144,6 +149,7 @@ export class ProfileAdminComponent implements OnInit {
     this.server.regSuc(data).subscribe(res => {
       if(res['ok']){
         this.modal1 = false;
+        this.loadSucs();
       }else{
         alert(res['message']);
       }
