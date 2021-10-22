@@ -11,6 +11,7 @@ import { ApiService } from 'src/app/services/api.service';
 export class ProfileAdminComponent implements OnInit {
   modal:boolean = false;
 
+  rooms:any[] = [];
 
   updateF = new FormGroup({
     name: new FormControl('juan'),
@@ -26,9 +27,23 @@ export class ProfileAdminComponent implements OnInit {
   ) { }
 
   ngOnInit(): void {
+    this.loadRooms();
+    this.loadSucs();
   }
 
+  loadSucs(){
 
+  }
+
+  loadRooms(){
+    this.server.adminRooms(parseInt(localStorage.getItem('user') || '0')).subscribe(res => {
+      if(res['ok']){
+        this.rooms = res['data'];
+      }else{
+        alert(res['message']);
+      }
+    });
+  }
 
   update(){
     let data = this.updateF.value;

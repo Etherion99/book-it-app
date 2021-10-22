@@ -45,6 +45,28 @@ class RoomsController extends Controller
         return $res;
     }
 
+    public function findByAdmin($user){
+        $res = [
+            'ok' => true,
+            'message' => ''
+        ];
+
+        try{
+            $rooms = Room::whereHas('branch.hotel.user', function($q) use($user){
+                $q->where('id', $user);            
+            })->with(['branch', 'branch.hotel', 'branch.hotel.user', 'roomtype'])->limit(5)->get();
+
+            $res['data'] = $rooms;
+        }catch(\Illuminate\Database\QueryException $e){
+            $res = [
+                'ok' => false,
+                'message' => $e->getMessage()
+            ];
+        }
+        
+        return $res;
+    }
+
     public function book(Request $request){
         $data = $request->all();
 

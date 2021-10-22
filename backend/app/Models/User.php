@@ -46,6 +46,6 @@ class User extends Authenticatable
     //relación 1-1 con hotel
     public function hotel()
     {
-        return $this->hasOne(Hotel::class);
+        return $this->belongsTo(Hotel::class);
     }
 }

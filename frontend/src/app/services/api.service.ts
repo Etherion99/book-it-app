@@ -51,4 +51,8 @@ export class ApiService {
   regHotel(data:object):Observable<any>{
     return this.http.post(this.API+'hotel/create', data);
   }
+
+  adminRooms(user:number):Observable<any>{
+    return this.http.get(this.API+'room/find_by_admin/'+user);
+  }
 }

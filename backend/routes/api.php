@@ -33,6 +33,7 @@ Route::group(['prefix' => 'city'], function (){
 
 Route::group(['prefix' => 'room'], function (){
     Route::get('find_by_city/{city}', [RoomsController::class, 'findByCity']);
+    Route::get('find_by_admin/{user}', [RoomsController::class, 'findByAdmin']);
     Route::post('book', [RoomsController::class, 'book']);
 });
 
