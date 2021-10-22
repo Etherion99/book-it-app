@@ -1345,3 +1345,11 @@ INSERT INTO bookings(id,date,hour,time,user_id,room_id) VALUES (48,'1/16/2021','
 INSERT INTO bookings(id,date,hour,time,user_id,room_id) VALUES (49,'10/23/2020','1:50 AM',4,28,13);
 INSERT INTO bookings(id,date,hour,time,user_id,room_id) VALUES (50,'6/29/2021','5:06 AM',10,42,10);
 
+INSERT INTO branches (`id`,`hotel_id`,`city_id`,`branchtype_id`,`name`,`address`,`phone`,`description`)
+VALUES
+  (26,2,851,2,"Magestic inc.","6243 Dignissim Avenue",726436,"aliquam adipiscing lacus."),
+  (27,2,851,1,"Girón hotel","Ap #171-3923 Elementum Avenue",657794,"dui. Cras pellentesque."),
+  (28,1,851,1,"Hotel San Juan","208-7436 Porttitor Rd.",705960,"eget metus. In"),
+  (29,3,851,1,"Luctus Et LLP","8746 Urna. St.",749558,"faucibus leo, in"),
+  (30,1,851,2,"Semper Nam Institute","7618 Lectus Road",713715,"condimentum eget, volutpat");
+
