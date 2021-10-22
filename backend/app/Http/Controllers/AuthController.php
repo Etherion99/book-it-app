@@ -8,14 +8,22 @@ use App\Models\User;
 class AuthController extends Controller
 {
     public function signup(Request $request){
-        $data = $request->all();
-        $data['password'] = bcrypt($data['password']);
+        $res = [
+            'ok' => true,
+            'message' => ''
+        ];
 
-        User::create($data);
+        try{
+            $data = $request->all();
+            $data['password'] = bcrypt($data['password']);
 
-        return response()->json([
-            'message' => 'Successfully created user!'
-        ], 201);
+            User::create($data);
+        }catch(\Illuminate\Database\QueryException $e){
+            $res['ok'] = false;
+            $res['message'] = $e->getMessage();
+        }
+
+        return $res;
     }   
     
     public function login(){
