@@ -15,6 +15,7 @@ class Booking extends Model
         'time',
         'user_id',
         'room_id',
+        'total_cost'
     ];
     
     //Relación n-1 con room y con user

@@ -7,7 +7,9 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\HotelsController;
 use App\Http\Controllers\BranchesController;
 use App\Http\Controllers\UserController;
-
+use App\Http\Controllers\CityController;
+use App\Http\Controllers\DepartmentsController;
+use App\Http\Controllers\RoomsController;
 
 Route::group(['prefix' => 'auth'], function (){
     Route::post('singup', [AuthController::class, 'signup']);
@@ -17,7 +19,20 @@ Route::group(['prefix' => 'auth'], function (){
 Route::group(['prefix' => 'user'], function (){
     Route::get('find/{id}', [UserController::class, 'find']);
     Route::post('update', [UserController::class, 'update']);
-    Route::post('delete', [UserController::class, 'delete']);
+    Route::post('delete', [CityController::class, 'delete']);
+});
+
+Route::group(['prefix' => 'department'], function (){
+    Route::get('all', [DepartmentsController::class, 'all']);
+});
+
+Route::group(['prefix' => 'city'], function (){
+    Route::get('find_by_dpt/{department}', [CityController::class, 'findByDpt']);
+});
+
+Route::group(['prefix' => 'room'], function (){
+    Route::get('find_by_city/{city}', [RoomsController::class, 'findByCity']);
+    Route::post('book', [RoomsController::class, 'book']);
 });
 
 Route::post('branch/create',[AuthController::class, 'newBranch']);

@@ -27,4 +27,20 @@ export class ApiService {
   updateUser(data:Object):Observable<any>{
     return this.http.post(this.API+'user/update', data);
   }
+
+  loadDpts():Observable<any>{
+    return this.http.get(this.API+'department/all');
+  }
+
+  loadCities(dpt:number):Observable<any>{
+    return this.http.get(this.API+'city/find_by_dpt/'+dpt);
+  }
+
+  searchHabs(city:number):Observable<any>{
+    return this.http.get(this.API+'room/find_by_city/'+city);
+  }
+
+  reservar(data:Object):Observable<any>{
+    return this.http.post(this.API+'room/book', data);
+  }
 }

@@ -1,423 +1,295 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>BOOK IT APP</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/img/book.png" />
-        <!-- Font Awesome icons (free version)-->
-        <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
-        <!-- Google fonts-->
-        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
-        <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-        <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/sign-in/">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>   
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    </head>
-    <body id="page-top">
-        <!-- Navigation-->
-        <app-header clase="profile"></app-header>
-        <!-- Masthead-->
-        <h1></h1>
-        <h1></h1>
-        <br>
-        <section class="page-section bg-primary text-white mb-0" id="about">
-          <div class="container">
-              <!-- About Section Heading-->
-              <h2 class="page-section-heading text-center text-uppercase text-white">Estás Registrado!</h2>
-              <!-- Icon Divider-->
-              <div class="divider-custom divider-light">
-                  <div class="divider-custom-line"></div>
-                  <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                  <div class="divider-custom-line"></div>
-              </div>
-              <!-- About Section Content-->
-              <div class="row">
-                  <div class="col-lg-4 ms-auto"><p class="lead">Aquí puedes Actualizar tus datos de una manera sencilla. </p></div>
-                  <div class="col-lg-4 me-auto"><p class="lead">También puedes buscar habitación en los mejores hoteles de cada ciudad mediante un filtrado de calificaciones y precio. Ya eres parte de Book It App, reserva ya!.</p></div>
-              </div>
-              <!-- About Section Button-->
-              
-          </div>
-      </section>
-      <div id="diper" class="mb-5 row m-1 container-fluid d-flex align-items-center justify-content-center rounded-1" style="background-color: whitesmoke;">
-        <div class="col col-sm-4 card">        
-          <div class="m-2">
-            <h3 class="fs-3 text-center fw-bold">Mis datos:</h3>
-          </div>            
-          <div class="text-center" [formGroup]="updateF">
-            <div class="col-12 row mx-0 d-flex justify-content-center">
-              <div class="form-group row input-group d-flex"> 
-                <div class="row mx-0">
-                  <label for="nombreHotel" class=" col form-label fw-bold" style="width: 30%;">Nombre</label>
-                  <input type="text" class="col form-control order-2" style="width: 60%;" id="nombreHotel" formControlName="name">
-                </div>                  
-              </div>  
-              <div class="form-group row input-group d-flex">      
-                <div  class="row mx-0">
-                  <label for="nombreHotel" class="col form-label fw-bold" style="width: 30%;">Apellido</label>
-                  <input class="col form-control order-2" style="width: 60%;" id="Apellido" formControlName="lastname">
-                </div>
-              </div>  
 
-              <div class="form-group row">                        
-                <div  class="row mx-0">
-                  <label for="Correo" class="col form-label fw-bold" style="width: 30%;">Correo</label>
-                  <input class="col form-control order-2" style="width: 60%;" id="Correo" formControlName="email">
-                </div>
-              </div>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <title>BOOK IT APP</title>
+  <!-- Favicon-->
+  <link rel="icon" type="image/x-icon" href="assets/img/book.png" />
+  <!-- Font Awesome icons (free version)-->
+  <script src="https://use.fontawesome.com/releases/v5.15.3/js/all.js" crossorigin="anonymous"></script>
+  <!-- Google fonts-->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
+  <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet"
+    type="text/css" />
+  <!-- Core theme CSS (includes Bootstrap)-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+  <link rel="canonical" href="https://getbootstrap.com/docs/4.5/examples/sign-in/">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
 
-              <div class="form-group row input-group d-flex">
-                <div  class="row mx-0">
-                  <label for="username" class="col form-label fw-bold" style="width: 30%;">Username</label>
-                  <input class="col form-control order-2" style="width: 60%;" id="Username" formControlName="username">
-                </div>
-              </div>
-
-              <div class="form-group row mx-0 nput-group d-flex">                    
-                <div  class="row mx-0">
-                  <label for="Contraseña" class="col form-label fw-bold" style="width: 30%;">Contraseña</label>
-                  <input type="password" class="col form-control order-2" style="width: 60%;" id="Contraseña" formControlName="password">
-                </div>
-              </div>                          
-
-              <div  class="row mx-0 d-flex justify-content-center">
-                  <button id="try" type="submit"  value=""  class="btn btn-primary mb-3 mx-0" style="width: 40%;" (click)="update()">Actualizar Datos</button>                       
-              </div>                       
-            </div>     
-          </div>     
-          <div  class="container row mx-0 d-flex justify-content-center" >
-            <input id="try" data-toggle="modal" data-target="#popupNuevaAventura" href="#registrar" type="submit"  value="Registrar Hotel"  class="btn btn-primary mx-0" style="width: 60%;">                            
-          </div>
-        </div>   
-
-        
-        
-        <div  class= "col-sm-8 justify-content-center ">
-          <div class="row mx-0 card card row container-fluid d-flex align-items-center justify-content-center"> 
-            <div class="row mx-0 card mb-1">
-              <div class="row mx-0" >
-                <label class="fs-3 fw-bold" for="">Buscar en: </label>
-              </div>
-              <div class="row mx-0">
-                <div class="col mb-1" >                           
-                  <div style="width: 100%;">
-                    <select  name="CitNameS" id="inputTdoc" class="form-control">
-                        <option name="CitName" value="Bucaramanga">Bucaramanga</option>                
-                    </select>
-                  </div>
-                </div>
-                <div class="col">                              
-                  <input type="submit" value="Buscar"  class="btn btn-primary mb-10"> 
-                </div> 
-              </div>               
-            </div>
-            <div class="row mx-0">
-              <table class="table table-striped table-dark">
-                <thead>
-                  <tr>
-                    <th scope="col" >Hotel</th>    
-                    <th scope="col" >Sucursal</th>             
-                    <th scope="col" >Habitación</th>              
-                    <th scope="col" >Costo</th>
-                    <th scope="col" >Fecha Llegada</th> 
-                    <th scope="col" >Fecha Salida</th>   
-                    <th scope="col" ></th> 
-                     
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    
-                    <td>Punta Diamante</td>
-                    <td>Floridablanca</td>
-                    <td>Premium</td>
-                    <td>$300.000 COP</td>
-                    <td><input class="form-control " cellspacing="10" type="date" style="width: 60%;"></td>
-                    <td><input class="form-control" cellspacing="10"  type="date" style="width: 60%;"></td>
-                    <td><input type="submit" value="Reservar"  class="btn btn-primary mb-10"></td>
-                    
-                                                          
-                  </tr>
-                  <tr>
-                    
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td><input class="form-control " cellspacing="10" type="date" style="width: 60%;"></td>
-                    <td><input class="form-control" cellspacing="10"  type="date" style="width: 60%;"></td>
-                    <td><input type="submit" value="Reservar"  class="btn btn-primary mb-10"></td>
-                    
-                  </tr>
-                  <tr>
-                    
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td><input class="form-control " cellspacing="10" type="date" style="width: 60%;"></td>
-                    <td><input class="form-control" cellspacing="10"  type="date" style="width: 60%;"></td>
-                    <td><input type="submit" value="Reservar"  class="btn btn-primary mb-10"></td> 
-                  </tr>
-                  <tr>
-                    
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td><input class="form-control " cellspacing="10" type="date" style="width: 60%;"></td>
-                    <td><input class="form-control" cellspacing="10"  type="date" style="width: 60%;"></td>
-                    <td><input type="submit" value="Reservar"  class="btn btn-primary mb-10"></td> 
-                    
-                  </tr>
-                  <tr>
-                    
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td><input class="form-control " cellspacing="10" type="date" style="width: 60%;"></td>
-                    <td><input class="form-control" cellspacing="10"  type="date" style="width: 60%;"></td>
-                    <td><input type="submit" value="Reservar"  class="btn btn-primary mb-10"></td> 
-                    
-                  <tr>
-                    
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td><input class="form-control " cellspacing="10" type="date" style="width: 60%;"></td>
-                    <td><input class="form-control" cellspacing="10"  type="date" style="width: 60%;"></td>
-                    <td><input type="submit" value="Reservar"  class="btn btn-primary mb-10"></td> 
-                    
-                  </tr>
-                  <tr>
-                    
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td><input class="form-control " cellspacing="10" type="date" style="width: 60%;"></td>
-                    <td><input class="form-control" cellspacing="10"  type="date" style="width: 60%;"></td>
-                    <td><input type="submit" value="Reservar"  class="btn btn-primary mb-10"></td> 
-                    
-                  </tr>
-                  <tr>
-                    
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td><input class="form-control " cellspacing="10" type="date" style="width: 60%;"></td>
-                    <td><input class="form-control" cellspacing="10"  type="date" style="width: 60%;"></td>
-                    <td><input type="submit" value="Reservar"  class="btn btn-primary mb-10"></td> 
-                    
-                  </tr>
-                </tbody>
-              </table>
-            </div>            
-          </div>          
-                    
-        
-          <div  class = "card row mx-0 container-fluid d-flex align-items-center justify-content-center "  >
-              <div>
-                  <h3 class="fs-3 text-center fw-bold">Mis Reservas:</h3>
-              </div>
-              <div>
-                  <table class="table table-striped table-dark">
-                    <thead>
-                      <tr>
-                        <th scope="col" >ID</th>
-                        <th scope="col" >Dia</th>
-                        <th scope="col" >Hora</th>
-                        <th scope="col" >Hotel</th>    
-                        <th scope="col" >Sucursal</th>             
-                        <th scope="col" >Habitación</th>
-                        <th scope="col" >Tiempo(Horas)</th>                
-                        <th scope="col" >Costo</th>   
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row"></th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        
-                      </tr>
-                      <tr>
-                        <th scope="row"></th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"></th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"></th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"></th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"></th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"></th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"></th>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                        <td></td>
-                      </tr>
-                    </tbody>
-                  </table>
-                </div>
-                  
-          </div>
-        </div>
-        
-        <div id="registrar" class="row mx-0 container-fluid d-flex align-items-center justify-content-center rounded-1" style="background-color: whitesmoke;">            
-          <form class="col-12 row d-flex justify-content-center" id="registrar">
-              <div class="row card">
-                  <h1 class="fs-2 text-center fw-bold">Registrar Hotel</h1>
-              </div>  
-              <div class="row mb-4">
-                  <div class="col">
-                      <label for="name" class="form-label fw-bold">Nombre</label>
-                      <div class="input-group d-flex">
-                          <input type="text" class="form-control order-2" name="name" id="name">
-                          <span class="input-group-text order-1"><i class="fas fa-id-card"></i></span>
-                          <span class="focus-border"><i></i></span>
-                          <div class="invalid-feedback order-3"></div>
-                      </div>    
-                  </div>
-                  <div class="col">
-                      <label for="nit" class="form-label fw-bold">NIT</label>
-                      <div class="input-group d-flex">
-                          <input type="text" class="form-control order-2" name="nit" id="nit">
-                          <span class="input-group-text order-1"><i class="fas fa-shield-alt"></i></span>
-                          <span class="focus-border"><i></i></span>
-                          <div class="invalid-feedback order-3"></div>
-                      </div>
-                  </div>
-                  <div class="col">
-                      <label for="pagina_Web" class="form-label fw-bold">Pàgina Web</label>
-                      <div class="input-group d-flex">
-                          <input type="text" class="form-control order-2" name="pagina_Web" id="pagina_Web">
-                          <span class="input-group-text order-1"><i class="fas fa-cloud"></i></span>
-                          <span class="focus-border"><i></i></span>
-                          <div class="invalid-feedback order-3"></div>
-                      </div>
-                  </div>                    
-              </div>   
-
-              <div class="row mx-0 mb-2 justify-content-center">
-                  <input type="submit"  value="Registrar Hotel"  class="btn btn-primary mb-10" style="width: 40%;"> 
-              </div>
-          </form> 
-     
+<body id="page-top">
+  <!-- Navigation-->
+  <app-header clase="profile"></app-header>
+  <!-- Masthead-->
+  <h1></h1>
+  <h1></h1>
+  <br>
+  <section class="page-section bg-primary text-white mb-0" id="about">
+    <div class="container">
+      <!-- About Section Heading-->
+      <h2 class="page-section-heading text-center text-uppercase text-white">Estás Registrado!</h2>
+      <!-- Icon Divider-->
+      <div class="divider-custom divider-light">
+        <div class="divider-custom-line"></div>
+        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+        <div class="divider-custom-line"></div>
       </div>
-        
-    </div>
-      <section></section>
-      <footer class="footer text-center">
-            <div class="container">
-                <div class="row">
-                    <!-- Footer Location-->
-                    <div class="col-lg-4 mb-5 mb-lg-0">
-                        <h4 class="text-uppercase mb-4">Soporte técnico</h4>
-                        <p class="lead mb-0">
-                            Avenida Libertadores 
-                            <br />
-                            Steven Gerrard - 3157456985
-                        </p>
-                    </div>
-                    <!-- Footer Social Icons-->
-                    <div class="col-lg-4 mb-5 mb-lg-0">
-                        <h4 class="text-uppercase mb-4">Nuestras redes sociales</h4>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-facebook-f"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-twitter"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-linkedin-in"></i></a>
-                        <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-dribbble"></i></a>
-                    </div>
-                    <!-- Footer About Text-->
-                    
-                </div>
-            </div>
-        </footer>
-        <!-- Copyright Section-->
-        <div class="copyright py-4 text-center text-white">
-            <div class="container"><small>Copyright &copy; BOOK IT APP 2021</small></div>
+      <!-- About Section Content-->
+      <div class="row">
+        <div class="col-lg-4 ms-auto">
+          <p class="lead">Aquí puedes Actualizar tus datos de una manera sencilla. </p>
         </div>
-        
-        <!-- Bootstrap core JS-->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <!-- * *                               SB Forms JS                               * *-->
-        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-    </body>
+        <div class="col-lg-4 me-auto">
+          <p class="lead">También puedes buscar habitación en los mejores hoteles de cada ciudad mediante un filtrado de
+            calificaciones y precio. Ya eres parte de Book It App, reserva ya!.</p>
+        </div>
+      </div>
+      <!-- About Section Button-->
+
+    </div>
+  </section>
+  <div id="diper" class="row mx-0 py-5 container-fluid d-flex align-items-start justify-content-center rounded-1" style="background-color: whitesmoke;">
+    <div class="col-4 pr-4">
+      <div class="card">
+        <div class="m-2">
+          <h3 class="fs-3 text-center fw-bold">Mis datos:</h3>
+        </div>
+        <div class="text-center" [formGroup]="updateF">
+          <div class="col-12 row mx-0 d-flex justify-content-center">
+            <div class="form-group row input-group d-flex">
+              <div class="row mx-0">
+                <label for="nombreHotel" class=" col form-label fw-bold" style="width: 30%;">Nombre</label>
+                <input type="text" class="col form-control order-2" style="width: 60%;" id="nombreHotel"
+                  formControlName="name">
+              </div>
+            </div>
+            <div class="form-group row input-group d-flex">
+              <div class="row mx-0">
+                <label for="nombreHotel" class="col form-label fw-bold" style="width: 30%;">Apellido</label>
+                <input class="col form-control order-2" style="width: 60%;" id="Apellido" formControlName="lastname">
+              </div>
+            </div>
+
+            <div class="form-group row">
+              <div class="row mx-0">
+                <label for="Correo" class="col form-label fw-bold" style="width: 30%;">Correo</label>
+                <input class="col form-control order-2" style="width: 60%;" id="Correo" formControlName="email">
+              </div>
+            </div>
+
+            <div class="form-group row input-group d-flex">
+              <div class="row mx-0">
+                <label for="username" class="col form-label fw-bold" style="width: 30%;">Username</label>
+                <input class="col form-control order-2" style="width: 60%;" id="Username" formControlName="username">
+              </div>
+            </div>
+
+            <div class="form-group row mx-0 nput-group d-flex">
+              <div class="row mx-0">
+                <label for="Contraseña" class="col form-label fw-bold" style="width: 30%;">Contraseña</label>
+                <input type="password" class="col form-control order-2" style="width: 60%;" id="Contraseña"
+                  formControlName="password">
+              </div>
+            </div>
+
+            <div class="row mx-0 d-flex justify-content-center">
+              <button id="try" type="submit" value="" class="btn btn-primary mb-3 mx-0" style="width: 40%;"
+                (click)="update()">Actualizar Datos</button>
+            </div>
+          </div>
+        </div>
+        <div class="container row mx-0 d-flex justify-content-center">
+          <input id="try" data-toggle="modal" data-target="#popupNuevaAventura" href="#registrar" type="submit"
+            value="Registrar Hotel" class="btn btn-primary mx-0" style="width: 60%;">
+        </div>
+      </div>
+    </div>
+    <div class="col-8 pl-4">
+      <div class="justify-content-center card p-4">
+        <div>
+          <h3 class="fs-3 text-center fw-bold">Busca tu habitación:</h3>
+        </div>
+        <div class="row justify-content-center" [formGroup]="searchF">
+          <div class="col-4">
+            <select class="form-select" (change)="loadCities()" formControlName="department">
+              <option value="">Departamento</option>
+              <option *ngFor="let dpt of departments" [value]="dpt.id">{{dpt.name}}</option>
+            </select>
+          </div>
+          <div class="col-4">
+            <select class="form-select" formControlName="city" (change)="search()">
+              <option value="">Ciudad</option>
+              <option *ngFor="let city of cities" [value]="city.id">{{city.name}}</option>
+            </select>
+          </div>
+          <div class="col-2 text-center">
+            <button class="btn btn-primary mb-3 mx-0 fw-bold" (click)="search()">Buscar</button>
+          </div>
+        </div>
+        <div class="row mx-0">
+          <table class="table table-striped table-dark">
+            <thead>
+              <tr>
+                <th scope="col">Hotel</th>
+                <th scope="col">Sucursal</th>
+                <th scope="col">Habitación</th>
+                <th scope="col">Costo</th>
+                <th scope="col">Fecha Llegada</th>
+                <th scope="col">Fecha Salida</th>
+                <th scope="col"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr *ngFor="let room of rooms; let i = index">
+                <td>{{room.branch.hotel.name}}</td>
+                <td>{{room.branch.name}}</td>
+                <td>{{room.room_number}}</td>
+                <td>${{room['cost']}} COP</td>
+                <td><input class="form-control " cellspacing="10" type="date" style="width: 80%;" [(ngModel)]="rooms[i]['start']"></td>
+                <td><input class="form-control" cellspacing="10" type="date" style="width: 80%;" [(ngModel)]="rooms[i]['end']"></td>
+                <td><button class="btn btn-primary mb-10" (click)="reservar(room)">Reservar</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="justify-content-center card p-4 mt-3">
+        <div class="row mx-0 px-0 container-fluid d-flex align-items-center justify-content-center ">
+          <div>
+            <h3 class="fs-3 text-center fw-bold">Mis Reservas:</h3>
+          </div>
+          <div class="px-0">
+            <table class="table table-striped table-dark">
+              <thead>
+                <tr>
+                  <th scope="col">ID</th>
+                  <th scope="col">Dia</th>
+                  <th scope="col">Hora</th>
+                  <th scope="col">Hotel</th>
+                  <th scope="col">Sucursal</th>
+                  <th scope="col">Habitación</th>
+                  <th scope="col">Tiempo(Horas)</th>
+                  <th scope="col">Costo</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row"></th>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+                  <td></td>
+
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+
+    <div id="registrar" class="row mx-0 container-fluid d-flex align-items-center justify-content-center rounded-1"
+      style="background-color: whitesmoke;">
+      <form class="col-12 row d-flex justify-content-center" id="registrar">
+        <div class="row card">
+          <h1 class="fs-2 text-center fw-bold">Registrar Hotel</h1>
+        </div>
+        <div class="row mb-4">
+          <div class="col">
+            <label for="name" class="form-label fw-bold">Nombre</label>
+            <div class="input-group d-flex">
+              <input type="text" class="form-control order-2" name="name" id="name">
+              <span class="input-group-text order-1"><i class="fas fa-id-card"></i></span>
+              <span class="focus-border"><i></i></span>
+              <div class="invalid-feedback order-3"></div>
+            </div>
+          </div>
+          <div class="col">
+            <label for="nit" class="form-label fw-bold">NIT</label>
+            <div class="input-group d-flex">
+              <input type="text" class="form-control order-2" name="nit" id="nit">
+              <span class="input-group-text order-1"><i class="fas fa-shield-alt"></i></span>
+              <span class="focus-border"><i></i></span>
+              <div class="invalid-feedback order-3"></div>
+            </div>
+          </div>
+          <div class="col">
+            <label for="pagina_Web" class="form-label fw-bold">Pàgina Web</label>
+            <div class="input-group d-flex">
+              <input type="text" class="form-control order-2" name="pagina_Web" id="pagina_Web">
+              <span class="input-group-text order-1"><i class="fas fa-cloud"></i></span>
+              <span class="focus-border"><i></i></span>
+              <div class="invalid-feedback order-3"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="row mx-0 mb-2 justify-content-center">
+          <input type="submit" value="Registrar Hotel" class="btn btn-primary mb-10" style="width: 40%;">
+        </div>
+      </form>
+
+    </div>
+
+  </div>
+  <section></section>
+  <footer class="footer text-center">
+    <div class="container">
+      <div class="row">
+        <!-- Footer Location-->
+        <div class="col-lg-4 mb-5 mb-lg-0">
+          <h4 class="text-uppercase mb-4">Soporte técnico</h4>
+          <p class="lead mb-0">
+            Avenida Libertadores
+            <br />
+            Steven Gerrard - 3157456985
+          </p>
+        </div>
+        <!-- Footer Social Icons-->
+        <div class="col-lg-4 mb-5 mb-lg-0">
+          <h4 class="text-uppercase mb-4">Nuestras redes sociales</h4>
+          <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-facebook-f"></i></a>
+          <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-twitter"></i></a>
+          <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-linkedin-in"></i></a>
+          <a class="btn btn-outline-light btn-social mx-1" href="#!"><i class="fab fa-fw fa-dribbble"></i></a>
+        </div>
+        <!-- Footer About Text-->
+
+      </div>
+    </div>
+  </footer>
+  <!-- Copyright Section-->
+  <div class="copyright py-4 text-center text-white">
+    <div class="container"><small>Copyright &copy; BOOK IT APP 2021</small></div>
+  </div>
+
+  <!-- Bootstrap core JS-->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Core theme JS-->
+  <script src="js/scripts.js"></script>
+  <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+  <!-- * *                               SB Forms JS                               * *-->
+  <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
+  <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
+  <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+</body>
+
 </html>
