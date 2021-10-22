@@ -37,6 +37,7 @@ export class SignupComponent implements OnInit {
 
     this.server.signup(data).subscribe(res => {
       if(res['ok']){
+        localStorage.setItem('user', res['id']);
         this.router.navigate(['/profile']);
       }else{
         alert('Ha ocurrido un error al comunicarse con la base de datos.');

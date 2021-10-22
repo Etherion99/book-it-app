@@ -7,17 +7,17 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav ms-auto">
-                <li class="nav-item mx-0 mx-lg-1" *ngIf="clase=='home' || clase=='profile'">
-                    <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#inicio">Inicio</a></li>
+                <li class="nav-item mx-0 mx-lg-1" *ngIf="clase=='home' || clase=='profile' || clase=='signup' || clase=='login'">
+                    <a class="nav-link py-3 px-0 px-lg-3 rounded" href="/home">Inicio</a></li>
                 <li class="nav-item mx-0 mx-lg-1" *ngIf="clase=='home'">
                     <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">Nuestros aliados</a></li>
                 <li class="nav-item mx-0 mx-lg-1" *ngIf="clase=='home'">
                     <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">Quienes somos</a></li>
                 <li class="nav-item mx-0 mx-lg-1" *ngIf="clase=='home'">
                     <a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contáctanos</a></li>
-                <li class="nav-item mx-0 mx-lg-1" *ngIf="clase==''">
+                <li class="nav-item mx-0 mx-lg-1" *ngIf="clase=='home' || clase=='login'">
                     <a class="nav-link py-3 px-0 px-lg-3 rounded" href="/signup">Regístrate</a></li>
-                <li class="nav-item mx-0 mx-lg-1" *ngIf="clase==''">
+                <li class="nav-item mx-0 mx-lg-1" *ngIf="clase=='home' || clase=='signup'">
                     <a class="nav-link py-3 px-0 px-lg-3 rounded" href="/login">Log In</a></li>
                     <li class="nav-item mx-0 mx-lg-1" *ngIf="clase=='profile'">
                         <a class="nav-link py-3 px-0 px-lg-3 rounded" href="/logout">Salir</a></li>

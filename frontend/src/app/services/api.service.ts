@@ -19,4 +19,12 @@ export class ApiService {
   login(data:Object):Observable<any>{
     return this.http.post(this.API+'auth/login', data);
   }
+
+  findUser(id:number):Observable<any>{
+    return this.http.get(this.API+'user/find/'+id);
+  }
+
+  updateUser(data:Object):Observable<any>{
+    return this.http.post(this.API+'user/update', data);
+  }
 }

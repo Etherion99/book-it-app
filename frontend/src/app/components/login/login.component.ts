@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 import { ApiService } from 'src/app/services/api.service';
 
 @Component({
@@ -14,7 +15,8 @@ export class LoginComponent implements OnInit {
   });
 
   constructor(
-    private server: ApiService
+    private server: ApiService,
+    private router:Router
   ) { }
 
   ngOnInit(): void {
@@ -22,6 +24,13 @@ export class LoginComponent implements OnInit {
 
   login(){
     let data = this.form.value;
-    this.server.login(data)
+    this.server.login(data).subscribe(res => {
+      if(res['ok']){
+        localStorage.setItem('user', res['id']);
+        this.router.navigate(['/profile']);
+      }else{
+        alert(res['message']);
+      }
+    })
   }
 }
