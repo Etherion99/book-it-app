@@ -16,7 +16,7 @@ class CreateUsersTable extends Migration
             $table->string('username', 30);
             $table->string('password',72);
             $table->foreignId('city_id');
-            $table->integer('document');
+            $table->string('document', 10);
             $table->foreignId('documenttype_id');
             $table->foreignId('gender_id');
             $table->foreignID('hotel_id')->nullable();
